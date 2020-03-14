@@ -1,0 +1,27 @@
+{
+  "name": "verta-ai-aws-ecs-service",
+  "version": "1.0.0",
+  "description": "Verta AI on Amazon Elastic Container Service",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "author": {
+    "name": "Olalekan Elesin",
+    "url": "https://github.com/OElesin",
+    "organization": false
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^8.10.38",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-ec2": "*",
+    "@aws-cdk/aws-ecs": "*",
+    "@aws-cdk/aws-elasticloadbalancingv2": "*",
+    "@aws-cdk/core": "*"
+  }
+}
