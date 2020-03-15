@@ -14,7 +14,7 @@ The vision for this project is to develop AI Platform capabilities integrated wi
 
 In addition, we are working on full integration with Amazon SageMaker Experiments API and/or training logs so as to provide a unified experience in machine learning workflow. We do not have a defined roadmap yet, but we hope the project matures as it simplifies machine learning workflows.
 
-e
+
 Deployment
 ---
 This project is deployed via [Amazon Cloudformation](https://aws.amazon.com/cloudformation/) using the [AWS Cloud Development Kit](https://aws.amazon.com/cdk). Follow the steps below to deploy the stack in your AWS Account.
