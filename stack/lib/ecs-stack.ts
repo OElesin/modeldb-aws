@@ -1,9 +1,11 @@
-import { App, Stack, StackProps, Fn } from "@aws-cdk/core";
+import { Stack, StackProps, Fn, App } from "@aws-cdk/core";
 import { AutoScalingGroup } from '@aws-cdk/aws-autoscaling'
 import { SubnetType, Vpc, SubnetSelection, InstanceType, InstanceClass, InstanceSize, SecurityGroup, Peer, Port } from "@aws-cdk/aws-ec2";
 import { AwsLogDriver, Ec2TaskDefinition, NetworkMode, ContainerImage, Cluster, Ec2Service, Protocol} from '@aws-cdk/aws-ecs';
+import {ApplicationLoadBalancedEc2Service} from '@aws-cdk/aws-ecs-patterns';
+
 import { ConfigOptions } from './config';
-import { Secret } from '@aws-cdk/aws-secretsmanager';
+// import { Secret } from '@aws-cdk/aws-secretsmanager';
 
 export interface ECSStackProps extends StackProps {
     vpc: Vpc,
@@ -25,9 +27,11 @@ export class ECSStack extends Stack {
 
     constructor(scope: App, id: string, props: ECSStackProps) {
         super(scope, id, props);
-        const dbPassword = Secret.fromSecretAttributes(this, 'SamplePassword', {
-            secretArn: 'arn:aws:secretsmanager:{region}:{organisation-id}:secret:modeldb-postgress-password',
-        });
+        // const dbPassword = Secret.fromSecretAttributes(this, 'SamplePassword', {
+        //     secretArn: 'arn:aws:secretsmanager:{region}:{organisation-id}:secret:modeldb-postgress-password',
+        // });
+        const applicationSGId = Fn.importValue('modeldb-application-sg');
+        const appSecurityGroup = SecurityGroup.fromSecurityGroupId(this, 'ec2-SecurityGroup', applicationSGId);
         
         this.cluster = new Cluster(this, 'awsvpc-verta-ai-ecs-cluster', { vpc: props.vpc });
         this.publicSubnets = props.vpc.selectSubnets({
@@ -44,64 +48,69 @@ export class ECSStack extends Stack {
             vpcSubnets: this.publicSubnets,
         });
         const dbUrl = Fn.importValue('modeldb-rds-url');
-
+        const testPass = 'testpassword'
         this.instanceUserData = `
-        #!/bin/bash
-        mkdir -p /ecs/backend/config/
-        sudo curl -o 
-        cat <<EOF > /ecs/backend/config/config.yaml 
-        #This config is used by docker compose.
-        #ModelDB Properties
-        grpcServer:
-        port: 8085
+#!/bin/bash
+mkdir -p /ecs/backend/config/
+cat <<< '
+#This config is used by docker compose.
+#ModelDB Properties
+grpcServer:
+  port: 8085
 
-        springServer:
-        port: 8086
-        shutdownTimeout: 30 #time in second
+springServer:
+  port: 8086
+  shutdownTimeout: 30 #time in second
 
-        artifactStoreConfig:
-        artifactStoreType: NFS #S3, GCP, NFS
-        NFS:
-            nfsUrlProtocol: http
-            nfsRootPath: /artifact-store/
-            artifactEndpoint:
-            getArtifact: "api/v1/artifact/getArtifact"
-            storeArtifact: "api/v1/artifact/storeArtifact"
+artifactStoreConfig:
+  artifactStoreType: NFS #S3, GCP, NFS
+  NFS:
+    nfsUrlProtocol: http
+    nfsRootPath: /artifact-store/
+    artifactEndpoint:
+      getArtifact: "api/v1/artifact/getArtifact"
+      storeArtifact: "api/v1/artifact/storeArtifact"
 
-        # Database settings (type mongodb, couchbasedb, relational etc..)
-        database:
-        DBType: relational
-        timeout: 4
-        liquibaseLockThreshold: 60 #time in second
-        RdbConfiguration:
-            RdbDatabaseName: postgres
-            RdbDriver: "org.postgresql.Driver"
-            RdbDialect: "org.hibernate.dialect.PostgreSQLDialect"
-            RdbUrl: "${dbUrl}"
-            RdbUsername: "${props.dbUsername}"
-            RdbPassword: "${dbPassword}"
+# Database settings (type mongodb, couchbasedb, relational etc..)
+database:
+  DBType: relational
+  timeout: 4
+  liquibaseLockThreshold: 60 #time in second
+  RdbConfiguration:
+    RdbDatabaseName: postgres
+    RdbDriver: "org.postgresql.Driver"
+    RdbDialect: "org.hibernate.dialect.PostgreSQLDialect"
+    RdbUrl: "${dbUrl}"
+    RdbUsername: "${props.dbUsername}"
+    RdbPassword: "${testPass}"
 
-        # Test Database settings (type mongodb, couchbasedb etc..)
-        test:
-        test-database:
-            DBType: relational
-            timeout: 4
-            liquibaseLockThreshold: 60 #time in second
-            RdbConfiguration:
-            RdbDatabaseName: postgres
-            RdbDriver: "org.postgresql.Driver"
-            RdbDialect: "org.hibernate.dialect.PostgreSQLDialect"
-            RdbUrl: "jdbc:postgresql://modeldb-postgres:5432"
-            RdbUsername: 
-        EOF
-        `;
+# Test Database settings (type mongodb, couchbasedb etc..)
+test:
+  test-database:
+    DBType: relational
+    timeout: 4
+    liquibaseLockThreshold: 60 #time in second
+    RdbConfiguration:
+      RdbDatabaseName: postgres
+      RdbDriver: "org.postgresql.Driver"
+      RdbDialect: "org.hibernate.dialect.PostgreSQLDialect"
+      RdbUrl: "jdbc:postgresql://modeldb-postgres:5432"
+      RdbUsername: postgres
+      RdbPassword: root
+
+#ArtifactStore Properties
+artifactStore_grpcServer:
+  host: modeldb-backend
+  port: 8086
+
+telemetry:
+  opt_in: true
+  frequency: 1 #frequency to share data in hours, default 1
+  consumer: https://app.verta.ai/api/v1/uac-proxy/telemetry/collectTelemetry' > /ecs/backend/config/config.yaml`;
         this.clusterASG.addUserData(this.instanceUserData);
-
-        this.ecsClusterSecurityGroup = new SecurityGroup(this, 'ec2-SecurityGroup', {
-            vpc: props.vpc, allowAllOutbound: false,
-        });
-        this.ecsClusterSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22))
-        this.clusterASG.addSecurityGroup(this.ecsClusterSecurityGroup);
+        
+        appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22))
+        this.clusterASG.addSecurityGroup(appSecurityGroup);
 
         this.taskDefinition = new Ec2TaskDefinition(this, 'modeldb-awspvc', {
             networkMode: NetworkMode.AWS_VPC,
@@ -124,6 +133,21 @@ export class ECSStack extends Stack {
                 }
             }
         );
+
+        const modeldbFrontend = this.taskDefinition.addContainer('modeldb-frontend', {
+            image: ContainerImage.fromRegistry(config.vertaAIImages.ModelDBFrontend),
+            cpu: 100,
+            memoryLimitMiB: 256,
+            essential: true, 
+            environment: {
+                DEPLOYED: "yes",
+                BACKEND_API_PROTOCOL: "http",
+                BACKEND_API_DOMAIN: "modeldb-proxy:8080",
+                MDB_ADDRESS: "http://modeldb-proxy:8080",
+                ARTIFACTORY_ADDRESS: "http://modeldb-backend:8086"
+            },
+            logging: this.logDriver
+        });
         
         // define containers below
         const modeldbBackend = this.taskDefinition.addContainer('modeldb-backend', {
@@ -136,19 +160,6 @@ export class ECSStack extends Stack {
             },
             logging: this.logDriver
         });
-        
-        modeldbBackend.addPortMappings(
-            {
-                containerPort: 8085,
-                hostPort: 8085,
-                protocol: Protocol.TCP,
-            },
-            {
-                containerPort: 8086,
-                hostPort: 8086,
-                protocol: Protocol.TCP, 
-            }
-        );
         
         modeldbBackend.addMountPoints(
             {
@@ -174,7 +185,28 @@ export class ECSStack extends Stack {
             },
             logging: this.logDriver
         });
-        
+
+        modeldbFrontend.addPortMappings(
+            {
+                containerPort: 80,
+                hostPort: 80,
+                protocol: Protocol.TCP,
+            }
+        );
+
+        modeldbBackend.addPortMappings(
+            {
+                containerPort: 8085,
+                hostPort: 8085,
+                protocol: Protocol.TCP,
+            },
+            {
+                containerPort: 8086,
+                hostPort: 8086,
+                protocol: Protocol.TCP, 
+            }
+        );
+
         modeldbProxy.addPortMappings(
             {
                 containerPort: 8080,
@@ -183,18 +215,19 @@ export class ECSStack extends Stack {
             }
         );
 
-        this.containerSecurityGroup = new SecurityGroup(this, 'modeldb--7623', { 
-            vpc: props.vpc, allowAllOutbound: false,
-        });
-        this.containerSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(8085));
-        this.containerSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(8086));
-        this.containerSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22));
+        appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(8085));
+        appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(8086));
+        appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22));
+        appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(80));
 
-        // Create the service
-        this.ec2Service = new Ec2Service(this, 'awsvpc-ecs-demo-service', {
+        new ApplicationLoadBalancedEc2Service(this, 'modeldb-ecs-service', {
             cluster: this.cluster,
             taskDefinition: this.taskDefinition,
-            securityGroup: this.containerSecurityGroup
+            listenerPort: 80,
+            serviceName: 'modeldb-ecs-service',
+            publicLoadBalancer: true,
+            enableECSManagedTags: true
         });
+        
     }
 }

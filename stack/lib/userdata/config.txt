@@ -1,3 +1,6 @@
+#!/bin/bash
+mkdir -p /ecs/backend/config/
+cat << EOF > /ecs/backend/config/config.yaml 
 #This config is used by docker compose.
 #ModelDB Properties
 grpcServer:
@@ -25,9 +28,9 @@ database:
     RdbDatabaseName: postgres
     RdbDriver: "org.postgresql.Driver"
     RdbDialect: "org.hibernate.dialect.PostgreSQLDialect"
-    RdbUrl: "${modelDBRDSInstanceUrl}"
-    RdbUsername: "${myProdRDSUsername}"
-    RdbPassword: "${myProdRDSPassword}"
+    RdbUrl: "#{modelDBRDSInstanceUrl}"
+    RdbUsername: "#{myProdRDSUsername}"
+    RdbPassword: "#{myProdRDSPassword}"
 
 # Test Database settings (type mongodb, couchbasedb etc..)
 test:
@@ -52,3 +55,4 @@ telemetry:
   opt_in: true
   frequency: 1 #frequency to share data in hours, default 1
   consumer: https://app.verta.ai/api/v1/uac-proxy/telemetry/collectTelemetry
+EOF  

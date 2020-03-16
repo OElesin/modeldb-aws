@@ -1,6 +1,6 @@
-import { App, Duration, Stack, StackProps, CfnOutput, } from "@aws-cdk/core";
-import { DatabaseInstance, DatabaseInstanceEngine, StorageType } from '@aws-cdk/aws-rds';
-import { InstanceClass, InstanceSize, InstanceType, SubnetType, Vpc, SecurityGroup, Peer, Port } from "@aws-cdk/aws-ec2";
+import { App, Duration, Stack, StackProps, CfnOutput, Fn, } from "@aws-cdk/core";
+import { DatabaseInstance, DatabaseInstanceEngine, StorageType, } from '@aws-cdk/aws-rds';
+import { InstanceClass, InstanceSize, InstanceType, SubnetType, Vpc, SecurityGroup, CfnSecurityGroupIngress, } from "@aws-cdk/aws-ec2";
 
 export interface RDSStackProps extends StackProps {
     vpc: Vpc,
@@ -17,12 +17,16 @@ export class RDSStack extends Stack {
     constructor(scope: App, id: string, props: RDSStackProps) {
         super(scope, id, props);
 
-        const rdsSecurityGroup = new SecurityGroup(this, 'rdsSecurityGroup', {
-            vpc: props.vpc, allowAllOutbound: false,
-        });
-
-        rdsSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(props.port))
-        
+        const rdsSGId = Fn.importValue('modeldb-rds-sg');
+        const applicationSGId = Fn.importValue('modeldb-application-sg');
+        const rdsSecurityGroup = SecurityGroup.fromSecurityGroupId(this, 'ec2-SecurityGroup', rdsSGId);
+        new CfnSecurityGroupIngress(this, 'RDSIngressRule', {
+            ipProtocol: 'tcp',
+            fromPort: props.port,
+            toPort: props.port,
+            sourceSecurityGroupId: applicationSGId,
+            groupId: rdsSGId
+        })
         this.postgresRDSInstance = new DatabaseInstance(this, 'ModelDBRDSInstance', {
             engine: DatabaseInstanceEngine.POSTGRES,
             instanceClass: InstanceType.of(InstanceClass.T2, InstanceSize.SMALL),
@@ -42,8 +46,6 @@ export class RDSStack extends Stack {
             // generateMasterUserPassword: true,
             port: props.port
         });
-
-        
         
         const dbUrl = `jdbc:postgresql://${this.postgresRDSInstance.dbInstanceEndpointAddress}:${this.postgresRDSInstance.dbInstanceEndpointPort}`;
         new CfnOutput(this, 'modeldb-rds-url', {

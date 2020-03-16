@@ -5,7 +5,7 @@ import { Vpc, SubnetType, SecurityGroup } from '@aws-cdk/aws-ec2'
 export class VpcStack extends Stack {
     readonly vpc: Vpc;
     readonly rdsSecurityGroup: SecurityGroup;
-    readonly frontendSecurityGroup: SecurityGroup;
+    readonly applicationSecurityGroup: SecurityGroup;
 
     constructor(scope: App, id: string, props?: StackProps) {
         super(scope, id, props);
@@ -29,12 +29,12 @@ export class VpcStack extends Stack {
                 }
             ]
         });
-        this.rdsSecurityGroup = new SecurityGroup(this, 'rdsSecurityGroup', {
-            vpc: this.vpc, allowAllOutbound: false,
+        this.applicationSecurityGroup = new SecurityGroup(this, 'applicationSecurityGroup', {
+            vpc: this.vpc, allowAllOutbound: true,
         });
 
-        this.frontendSecurityGroup = new SecurityGroup(this, 'frontendSecurityGroup', {
-            vpc: this.vpc, allowAllOutbound: true,
+        this.rdsSecurityGroup = new SecurityGroup(this, 'rdsSecurityGroup', {
+            vpc: this.vpc, allowAllOutbound: false,
         });
 
         new CfnOutput(this, 'modeldb-rds-sg', {
@@ -43,10 +43,10 @@ export class VpcStack extends Stack {
             description: 'ModelDB RDS Security Group'
         });
 
-        new CfnOutput(this, 'modeldb-frontend-sg', {
-            exportName: 'modeldb-frontend-sg',
-            value: this.frontendSecurityGroup.securityGroupId, 
-            description: 'ModelDB Frontend Security Group'
+        new CfnOutput(this, 'modeldb-application-sg', {
+            exportName: 'modeldb-application-sg',
+            value: this.applicationSecurityGroup.securityGroupId, 
+            description: 'ModelDB Application Security Group'
         });
     }
 }
