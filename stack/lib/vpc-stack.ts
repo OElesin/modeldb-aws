@@ -30,11 +30,15 @@ export class VpcStack extends Stack {
             ]
         });
         this.applicationSecurityGroup = new SecurityGroup(this, 'applicationSecurityGroup', {
-            vpc: this.vpc, allowAllOutbound: true,
+            vpc: this.vpc, 
+            securityGroupName: 'applicationSecurityGroup',
+            allowAllOutbound: true,
         });
 
         this.rdsSecurityGroup = new SecurityGroup(this, 'rdsSecurityGroup', {
-            vpc: this.vpc, allowAllOutbound: false,
+            vpc: this.vpc, 
+            securityGroupName: 'rdsSecurityGroup',
+            allowAllOutbound: true,
         });
 
         new CfnOutput(this, 'modeldb-rds-sg', {

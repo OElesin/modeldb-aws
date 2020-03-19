@@ -3,9 +3,9 @@ import { AutoScalingGroup } from '@aws-cdk/aws-autoscaling'
 import { SubnetType, Vpc, SubnetSelection, InstanceType, InstanceClass, InstanceSize, SecurityGroup, Peer, Port } from "@aws-cdk/aws-ec2";
 import { AwsLogDriver, Ec2TaskDefinition, NetworkMode, ContainerImage, Cluster, Ec2Service, Protocol} from '@aws-cdk/aws-ecs';
 import {ApplicationLoadBalancedEc2Service} from '@aws-cdk/aws-ecs-patterns';
-
+import * as AWS from 'aws-sdk';
 import { ConfigOptions } from './config';
-// import { Secret } from '@aws-cdk/aws-secretsmanager';
+
 
 export interface ECSStackProps extends StackProps {
     vpc: Vpc,
@@ -27,13 +27,14 @@ export class ECSStack extends Stack {
 
     constructor(scope: App, id: string, props: ECSStackProps) {
         super(scope, id, props);
-        // const dbPassword = Secret.fromSecretAttributes(this, 'SamplePassword', {
-        //     secretArn: 'arn:aws:secretsmanager:{region}:{organisation-id}:secret:modeldb-postgress-password',
-        // });
+        
         const applicationSGId = Fn.importValue('modeldb-application-sg');
         const appSecurityGroup = SecurityGroup.fromSecurityGroupId(this, 'ec2-SecurityGroup', applicationSGId);
         
-        this.cluster = new Cluster(this, 'awsvpc-verta-ai-ecs-cluster', { vpc: props.vpc });
+        this.cluster = new Cluster(this, 'modeldb-ecs-cluster', { 
+            vpc: props.vpc,
+            clusterName: 'modeldb-ecs-cluster'
+        });
         this.publicSubnets = props.vpc.selectSubnets({
             subnetType: SubnetType.PUBLIC
         });
@@ -43,12 +44,12 @@ export class ECSStack extends Stack {
         });
 
         this.clusterASG = this.cluster.addCapacity('DefaultAutoScalingGroup', {
-            instanceType: InstanceType.of(InstanceClass.T2, InstanceSize.MICRO),
+            instanceType: InstanceType.of(InstanceClass.M4, InstanceSize.LARGE),
             keyName: 'datafy-keypair',
+            associatePublicIpAddress: true,
             vpcSubnets: this.publicSubnets,
         });
         const dbUrl = Fn.importValue('modeldb-rds-url');
-        const testPass = 'testpassword'
         this.instanceUserData = `
 #!/bin/bash
 mkdir -p /ecs/backend/config/
@@ -82,7 +83,7 @@ database:
     RdbDialect: "org.hibernate.dialect.PostgreSQLDialect"
     RdbUrl: "${dbUrl}"
     RdbUsername: "${props.dbUsername}"
-    RdbPassword: "${testPass}"
+    RdbPassword: "#dbPassword"
 
 # Test Database settings (type mongodb, couchbasedb etc..)
 test:
@@ -107,8 +108,25 @@ telemetry:
   opt_in: true
   frequency: 1 #frequency to share data in hours, default 1
   consumer: https://app.verta.ai/api/v1/uac-proxy/telemetry/collectTelemetry' > /ecs/backend/config/config.yaml`;
-        this.clusterASG.addUserData(this.instanceUserData);
         
+        const secretsmanager = new AWS.SecretsManager();
+        let _self = this;
+        let _params = {
+            SecretId: "modeldb-postgres-cdb", 
+            VersionStage: "AWSCURRENT"
+        }
+        secretsmanager.getSecretValue(_params, function(error, data){
+            if (error) console.log(error, error.stack);
+            else {
+                let secureString = data['SecretString'];
+                let secureStringObj = JSON.parse(String(secureString));
+                let password = secureStringObj['password']
+                let userData = _self.instanceUserData.replace('#dbPassword', password);
+                _self.clusterASG.addUserData(userData); 
+            }
+        });
+        // this.clusterASG.addUserData(this.instanceUserData);
+
         appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22))
         this.clusterASG.addSecurityGroup(appSecurityGroup);
 
@@ -133,21 +151,6 @@ telemetry:
                 }
             }
         );
-
-        const modeldbFrontend = this.taskDefinition.addContainer('modeldb-frontend', {
-            image: ContainerImage.fromRegistry(config.vertaAIImages.ModelDBFrontend),
-            cpu: 100,
-            memoryLimitMiB: 256,
-            essential: true, 
-            environment: {
-                DEPLOYED: "yes",
-                BACKEND_API_PROTOCOL: "http",
-                BACKEND_API_DOMAIN: "modeldb-proxy:8080",
-                MDB_ADDRESS: "http://modeldb-proxy:8080",
-                ARTIFACTORY_ADDRESS: "http://modeldb-backend:8086"
-            },
-            logging: this.logDriver
-        });
         
         // define containers below
         const modeldbBackend = this.taskDefinition.addContainer('modeldb-backend', {
@@ -160,6 +163,19 @@ telemetry:
             },
             logging: this.logDriver
         });
+        
+        modeldbBackend.addPortMappings(
+            {
+                containerPort: 8085,
+                hostPort: 8085,
+                protocol: Protocol.TCP,
+            },
+            {
+                containerPort: 8086,
+                hostPort: 8086,
+                protocol: Protocol.TCP, 
+            }
+        );
         
         modeldbBackend.addMountPoints(
             {
@@ -185,28 +201,7 @@ telemetry:
             },
             logging: this.logDriver
         });
-
-        modeldbFrontend.addPortMappings(
-            {
-                containerPort: 80,
-                hostPort: 80,
-                protocol: Protocol.TCP,
-            }
-        );
-
-        modeldbBackend.addPortMappings(
-            {
-                containerPort: 8085,
-                hostPort: 8085,
-                protocol: Protocol.TCP,
-            },
-            {
-                containerPort: 8086,
-                hostPort: 8086,
-                protocol: Protocol.TCP, 
-            }
-        );
-
+        
         modeldbProxy.addPortMappings(
             {
                 containerPort: 8080,
@@ -220,13 +215,34 @@ telemetry:
         appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22));
         appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(80));
 
-        new ApplicationLoadBalancedEc2Service(this, 'modeldb-ecs-service', {
+        // Create the backend service
+        this.ec2Service = new Ec2Service(this, 'modeldb-backend-service', {
             cluster: this.cluster,
             taskDefinition: this.taskDefinition,
+            securityGroup: appSecurityGroup,
+            serviceName: 'modeldb-backend-service',
+        });
+
+        new ApplicationLoadBalancedEc2Service(this, 'modeldb-ecs-service', {
+            cluster: this.cluster,
             listenerPort: 80,
-            serviceName: 'modeldb-ecs-service',
+            cpu: 100,
             publicLoadBalancer: true,
-            enableECSManagedTags: true
+            memoryLimitMiB: 256,
+            serviceName: 'modeldb-frontend-service',
+            taskImageOptions: {
+                image: ContainerImage.fromRegistry(config.vertaAIImages.ModelDBFrontend),
+                containerPort: 3000,
+                containerName: 'modeldb-frontend',
+                environment: {
+                    DEPLOYED: "yes",
+                    BACKEND_API_PROTOCOL: "http",
+                    BACKEND_API_DOMAIN: "modeldb-proxy:8080",
+                    MDB_ADDRESS: "http://modeldb-proxy:8080",
+                    ARTIFACTORY_ADDRESS: "http://modeldb-backend:8086"
+                },
+                logDriver: this.logDriver,
+            }
         });
         
     }

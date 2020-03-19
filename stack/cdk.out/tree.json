@@ -8,17 +8,17 @@
         "id": "Tree",
         "path": "Tree"
       },
-      "MLInfraVpc": {
-        "id": "MLInfraVpc",
-        "path": "MLInfraVpc",
+      "ml-base-infra-stack": {
+        "id": "ml-base-infra-stack",
+        "path": "ml-base-infra-stack",
         "children": {
           "Vpc": {
             "id": "Vpc",
-            "path": "MLInfraVpc/Vpc",
+            "path": "ml-base-infra-stack/Vpc",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "MLInfraVpc/Vpc/Resource",
+                "path": "ml-base-infra-stack/Vpc/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
                   "aws:cdk:cloudformation:props": {
@@ -29,7 +29,7 @@
                     "tags": [
                       {
                         "key": "Name",
-                        "value": "MLInfraVpc/Vpc"
+                        "value": "ml-base-infra-stack/Vpc"
                       }
                     ]
                   }
@@ -37,11 +37,11 @@
               },
               "ingressSubnet1": {
                 "id": "ingressSubnet1",
-                "path": "MLInfraVpc/Vpc/ingressSubnet1",
+                "path": "ml-base-infra-stack/Vpc/ingressSubnet1",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet1/Subnet",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet1/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -61,7 +61,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet1"
                           },
                           {
                             "key": "aws-cdk:subnet-name",
@@ -77,11 +77,11 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet1/Acl"
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet1/Acl"
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet1/RouteTable",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet1/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -91,7 +91,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet1"
                           }
                         ]
                       }
@@ -99,7 +99,7 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet1/RouteTableAssociation",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet1/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
@@ -114,7 +114,7 @@
                   },
                   "DefaultRoute": {
                     "id": "DefaultRoute",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet1/DefaultRoute",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet1/DefaultRoute",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Route",
                       "aws:cdk:cloudformation:props": {
@@ -130,7 +130,7 @@
                   },
                   "EIP": {
                     "id": "EIP",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet1/EIP",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet1/EIP",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
                       "aws:cdk:cloudformation:props": {
@@ -138,7 +138,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet1"
                           }
                         ]
                       }
@@ -146,7 +146,7 @@
                   },
                   "NATGateway": {
                     "id": "NATGateway",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet1/NATGateway",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet1/NATGateway",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
                       "aws:cdk:cloudformation:props": {
@@ -162,7 +162,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet1"
                           }
                         ]
                       }
@@ -172,11 +172,11 @@
               },
               "ingressSubnet2": {
                 "id": "ingressSubnet2",
-                "path": "MLInfraVpc/Vpc/ingressSubnet2",
+                "path": "ml-base-infra-stack/Vpc/ingressSubnet2",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet2/Subnet",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet2/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -196,7 +196,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet2"
                           },
                           {
                             "key": "aws-cdk:subnet-name",
@@ -212,11 +212,11 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet2/Acl"
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet2/Acl"
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet2/RouteTable",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet2/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -226,7 +226,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet2"
                           }
                         ]
                       }
@@ -234,7 +234,7 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet2/RouteTableAssociation",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet2/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
@@ -249,7 +249,7 @@
                   },
                   "DefaultRoute": {
                     "id": "DefaultRoute",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet2/DefaultRoute",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet2/DefaultRoute",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Route",
                       "aws:cdk:cloudformation:props": {
@@ -265,7 +265,7 @@
                   },
                   "EIP": {
                     "id": "EIP",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet2/EIP",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet2/EIP",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
                       "aws:cdk:cloudformation:props": {
@@ -273,7 +273,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet2"
                           }
                         ]
                       }
@@ -281,7 +281,7 @@
                   },
                   "NATGateway": {
                     "id": "NATGateway",
-                    "path": "MLInfraVpc/Vpc/ingressSubnet2/NATGateway",
+                    "path": "ml-base-infra-stack/Vpc/ingressSubnet2/NATGateway",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
                       "aws:cdk:cloudformation:props": {
@@ -297,7 +297,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/ingressSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/ingressSubnet2"
                           }
                         ]
                       }
@@ -307,11 +307,11 @@
               },
               "applicationSubnet1": {
                 "id": "applicationSubnet1",
-                "path": "MLInfraVpc/Vpc/applicationSubnet1",
+                "path": "ml-base-infra-stack/Vpc/applicationSubnet1",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet1/Subnet",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet1/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -331,7 +331,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/applicationSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/applicationSubnet1"
                           },
                           {
                             "key": "aws-cdk:subnet-name",
@@ -347,11 +347,11 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet1/Acl"
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet1/Acl"
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet1/RouteTable",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet1/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -361,7 +361,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/applicationSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/applicationSubnet1"
                           }
                         ]
                       }
@@ -369,7 +369,7 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet1/RouteTableAssociation",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet1/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
@@ -384,7 +384,7 @@
                   },
                   "DefaultRoute": {
                     "id": "DefaultRoute",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet1/DefaultRoute",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet1/DefaultRoute",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Route",
                       "aws:cdk:cloudformation:props": {
@@ -402,11 +402,11 @@
               },
               "applicationSubnet2": {
                 "id": "applicationSubnet2",
-                "path": "MLInfraVpc/Vpc/applicationSubnet2",
+                "path": "ml-base-infra-stack/Vpc/applicationSubnet2",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet2/Subnet",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet2/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -426,7 +426,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/applicationSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/applicationSubnet2"
                           },
                           {
                             "key": "aws-cdk:subnet-name",
@@ -442,11 +442,11 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet2/Acl"
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet2/Acl"
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet2/RouteTable",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet2/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -456,7 +456,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/applicationSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/applicationSubnet2"
                           }
                         ]
                       }
@@ -464,7 +464,7 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet2/RouteTableAssociation",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet2/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
@@ -479,7 +479,7 @@
                   },
                   "DefaultRoute": {
                     "id": "DefaultRoute",
-                    "path": "MLInfraVpc/Vpc/applicationSubnet2/DefaultRoute",
+                    "path": "ml-base-infra-stack/Vpc/applicationSubnet2/DefaultRoute",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Route",
                       "aws:cdk:cloudformation:props": {
@@ -497,11 +497,11 @@
               },
               "rdsSubnet1": {
                 "id": "rdsSubnet1",
-                "path": "MLInfraVpc/Vpc/rdsSubnet1",
+                "path": "ml-base-infra-stack/Vpc/rdsSubnet1",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet1/Subnet",
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet1/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -521,7 +521,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/rdsSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/rdsSubnet1"
                           },
                           {
                             "key": "aws-cdk:subnet-name",
@@ -537,11 +537,11 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet1/Acl"
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet1/Acl"
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet1/RouteTable",
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet1/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -551,7 +551,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/rdsSubnet1"
+                            "value": "ml-base-infra-stack/Vpc/rdsSubnet1"
                           }
                         ]
                       }
@@ -559,7 +559,7 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet1/RouteTableAssociation",
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet1/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
@@ -576,11 +576,11 @@
               },
               "rdsSubnet2": {
                 "id": "rdsSubnet2",
-                "path": "MLInfraVpc/Vpc/rdsSubnet2",
+                "path": "ml-base-infra-stack/Vpc/rdsSubnet2",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet2/Subnet",
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet2/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -600,7 +600,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/rdsSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/rdsSubnet2"
                           },
                           {
                             "key": "aws-cdk:subnet-name",
@@ -616,11 +616,11 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet2/Acl"
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet2/Acl"
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet2/RouteTable",
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet2/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -630,7 +630,7 @@
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "MLInfraVpc/Vpc/rdsSubnet2"
+                            "value": "ml-base-infra-stack/Vpc/rdsSubnet2"
                           }
                         ]
                       }
@@ -638,7 +638,7 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "MLInfraVpc/Vpc/rdsSubnet2/RouteTableAssociation",
+                    "path": "ml-base-infra-stack/Vpc/rdsSubnet2/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
@@ -655,14 +655,14 @@
               },
               "IGW": {
                 "id": "IGW",
-                "path": "MLInfraVpc/Vpc/IGW",
+                "path": "ml-base-infra-stack/Vpc/IGW",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
                   "aws:cdk:cloudformation:props": {
                     "tags": [
                       {
                         "key": "Name",
-                        "value": "MLInfraVpc/Vpc"
+                        "value": "ml-base-infra-stack/Vpc"
                       }
                     ]
                   }
@@ -670,7 +670,7 @@
               },
               "VPCGW": {
                 "id": "VPCGW",
-                "path": "MLInfraVpc/Vpc/VPCGW",
+                "path": "ml-base-infra-stack/Vpc/VPCGW",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
                   "aws:cdk:cloudformation:props": {
@@ -687,15 +687,16 @@
           },
           "applicationSecurityGroup": {
             "id": "applicationSecurityGroup",
-            "path": "MLInfraVpc/applicationSecurityGroup",
+            "path": "ml-base-infra-stack/applicationSecurityGroup",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "MLInfraVpc/applicationSecurityGroup/Resource",
+                "path": "ml-base-infra-stack/applicationSecurityGroup/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
                   "aws:cdk:cloudformation:props": {
-                    "groupDescription": "MLInfraVpc/applicationSecurityGroup",
+                    "groupDescription": "ml-base-infra-stack/applicationSecurityGroup",
+                    "groupName": "applicationSecurityGroup",
                     "securityGroupEgress": [
                       {
                         "cidrIp": "0.0.0.0/0",
@@ -713,22 +714,21 @@
           },
           "rdsSecurityGroup": {
             "id": "rdsSecurityGroup",
-            "path": "MLInfraVpc/rdsSecurityGroup",
+            "path": "ml-base-infra-stack/rdsSecurityGroup",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "MLInfraVpc/rdsSecurityGroup/Resource",
+                "path": "ml-base-infra-stack/rdsSecurityGroup/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
                   "aws:cdk:cloudformation:props": {
-                    "groupDescription": "MLInfraVpc/rdsSecurityGroup",
+                    "groupDescription": "ml-base-infra-stack/rdsSecurityGroup",
+                    "groupName": "rdsSecurityGroup",
                     "securityGroupEgress": [
                       {
-                        "cidrIp": "255.255.255.255/32",
-                        "description": "Disallow all traffic",
-                        "ipProtocol": "icmp",
-                        "fromPort": 252,
-                        "toPort": 86
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
                       }
                     ],
                     "vpcId": {
@@ -741,59 +741,59 @@
           },
           "modeldb-rds-sg": {
             "id": "modeldb-rds-sg",
-            "path": "MLInfraVpc/modeldb-rds-sg"
+            "path": "ml-base-infra-stack/modeldb-rds-sg"
           },
           "modeldb-application-sg": {
             "id": "modeldb-application-sg",
-            "path": "MLInfraVpc/modeldb-application-sg"
+            "path": "ml-base-infra-stack/modeldb-application-sg"
           },
           "Exports": {
             "id": "Exports",
-            "path": "MLInfraVpc/Exports",
+            "path": "ml-base-infra-stack/Exports",
             "children": {
               "Output{\"Ref\":\"Vpc8378EB38\"}": {
                 "id": "Output{\"Ref\":\"Vpc8378EB38\"}",
-                "path": "MLInfraVpc/Exports/Output{\"Ref\":\"Vpc8378EB38\"}"
+                "path": "ml-base-infra-stack/Exports/Output{\"Ref\":\"Vpc8378EB38\"}"
               },
               "Output{\"Ref\":\"VpcingressSubnet1Subnet059F22C6\"}": {
                 "id": "Output{\"Ref\":\"VpcingressSubnet1Subnet059F22C6\"}",
-                "path": "MLInfraVpc/Exports/Output{\"Ref\":\"VpcingressSubnet1Subnet059F22C6\"}"
+                "path": "ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcingressSubnet1Subnet059F22C6\"}"
               },
               "Output{\"Ref\":\"VpcingressSubnet2SubnetF175D754\"}": {
                 "id": "Output{\"Ref\":\"VpcingressSubnet2SubnetF175D754\"}",
-                "path": "MLInfraVpc/Exports/Output{\"Ref\":\"VpcingressSubnet2SubnetF175D754\"}"
+                "path": "ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcingressSubnet2SubnetF175D754\"}"
               },
               "Output{\"Ref\":\"VpcapplicationSubnet1Subnet8B68205B\"}": {
                 "id": "Output{\"Ref\":\"VpcapplicationSubnet1Subnet8B68205B\"}",
-                "path": "MLInfraVpc/Exports/Output{\"Ref\":\"VpcapplicationSubnet1Subnet8B68205B\"}"
+                "path": "ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcapplicationSubnet1Subnet8B68205B\"}"
               },
               "Output{\"Ref\":\"VpcapplicationSubnet2Subnet29670962\"}": {
                 "id": "Output{\"Ref\":\"VpcapplicationSubnet2Subnet29670962\"}",
-                "path": "MLInfraVpc/Exports/Output{\"Ref\":\"VpcapplicationSubnet2Subnet29670962\"}"
+                "path": "ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcapplicationSubnet2Subnet29670962\"}"
               },
               "Output{\"Ref\":\"VpcrdsSubnet1SubnetC2926CEA\"}": {
                 "id": "Output{\"Ref\":\"VpcrdsSubnet1SubnetC2926CEA\"}",
-                "path": "MLInfraVpc/Exports/Output{\"Ref\":\"VpcrdsSubnet1SubnetC2926CEA\"}"
+                "path": "ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcrdsSubnet1SubnetC2926CEA\"}"
               },
               "Output{\"Ref\":\"VpcrdsSubnet2Subnet70A835C8\"}": {
                 "id": "Output{\"Ref\":\"VpcrdsSubnet2Subnet70A835C8\"}",
-                "path": "MLInfraVpc/Exports/Output{\"Ref\":\"VpcrdsSubnet2Subnet70A835C8\"}"
+                "path": "ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcrdsSubnet2Subnet70A835C8\"}"
               }
             }
           }
         }
       },
-      "ModelDbRDSStack": {
-        "id": "ModelDbRDSStack",
-        "path": "ModelDbRDSStack",
+      "modeldb-rds-stack": {
+        "id": "modeldb-rds-stack",
+        "path": "modeldb-rds-stack",
         "children": {
           "ec2-SecurityGroup": {
             "id": "ec2-SecurityGroup",
-            "path": "ModelDbRDSStack/ec2-SecurityGroup"
+            "path": "modeldb-rds-stack/ec2-SecurityGroup"
           },
           "RDSIngressRule": {
             "id": "RDSIngressRule",
-            "path": "ModelDbRDSStack/RDSIngressRule",
+            "path": "modeldb-rds-stack/RDSIngressRule",
             "attributes": {
               "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
               "aws:cdk:cloudformation:props": {
@@ -811,21 +811,21 @@
           },
           "ModelDBRDSInstance": {
             "id": "ModelDBRDSInstance",
-            "path": "ModelDbRDSStack/ModelDBRDSInstance",
+            "path": "modeldb-rds-stack/ModelDBRDSInstance",
             "children": {
               "SubnetGroup": {
                 "id": "SubnetGroup",
-                "path": "ModelDbRDSStack/ModelDBRDSInstance/SubnetGroup",
+                "path": "modeldb-rds-stack/ModelDBRDSInstance/SubnetGroup",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::RDS::DBSubnetGroup",
                   "aws:cdk:cloudformation:props": {
                     "dbSubnetGroupDescription": "Subnet group for ModelDBRDSInstance database",
                     "subnetIds": [
                       {
-                        "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcrdsSubnet1SubnetC2926CEA415B78A7"
+                        "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcrdsSubnet1SubnetC2926CEA415B78A7"
                       },
                       {
-                        "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcrdsSubnet2Subnet70A835C80F5EB08B"
+                        "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcrdsSubnet2Subnet70A835C80F5EB08B"
                       }
                     ]
                   }
@@ -833,11 +833,11 @@
               },
               "Secret": {
                 "id": "Secret",
-                "path": "ModelDbRDSStack/ModelDBRDSInstance/Secret",
+                "path": "modeldb-rds-stack/ModelDBRDSInstance/Secret",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "ModelDbRDSStack/ModelDBRDSInstance/Secret/Resource",
+                    "path": "modeldb-rds-stack/ModelDBRDSInstance/Secret/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
                       "aws:cdk:cloudformation:props": {
@@ -863,11 +863,11 @@
                   },
                   "Attachment": {
                     "id": "Attachment",
-                    "path": "ModelDbRDSStack/ModelDBRDSInstance/Secret/Attachment",
+                    "path": "modeldb-rds-stack/ModelDBRDSInstance/Secret/Attachment",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbRDSStack/ModelDBRDSInstance/Secret/Attachment/Resource",
+                        "path": "modeldb-rds-stack/ModelDBRDSInstance/Secret/Attachment/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::SecretsManager::SecretTargetAttachment",
                           "aws:cdk:cloudformation:props": {
@@ -887,7 +887,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "ModelDbRDSStack/ModelDBRDSInstance/Resource",
+                "path": "modeldb-rds-stack/ModelDBRDSInstance/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::RDS::DBInstance",
                   "aws:cdk:cloudformation:props": {
@@ -943,21 +943,21 @@
           },
           "modeldb-rds-url": {
             "id": "modeldb-rds-url",
-            "path": "ModelDbRDSStack/modeldb-rds-url"
+            "path": "modeldb-rds-stack/modeldb-rds-url"
           }
         }
       },
-      "ModelDbECSClusterStack": {
-        "id": "ModelDbECSClusterStack",
-        "path": "ModelDbECSClusterStack",
+      "modeldb-ecs-cluster-stack": {
+        "id": "modeldb-ecs-cluster-stack",
+        "path": "modeldb-ecs-cluster-stack",
         "children": {
           "ec2-SecurityGroup": {
             "id": "ec2-SecurityGroup",
-            "path": "ModelDbECSClusterStack/ec2-SecurityGroup",
+            "path": "modeldb-ecs-cluster-stack/ec2-SecurityGroup",
             "children": {
               "from 0.0.0.0_0:22": {
                 "id": "from 0.0.0.0_0:22",
-                "path": "ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:22",
+                "path": "modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:22",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
                   "aws:cdk:cloudformation:props": {
@@ -974,7 +974,7 @@
               },
               "from 0.0.0.0_0:8085": {
                 "id": "from 0.0.0.0_0:8085",
-                "path": "ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:8085",
+                "path": "modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:8085",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
                   "aws:cdk:cloudformation:props": {
@@ -991,7 +991,7 @@
               },
               "from 0.0.0.0_0:8086": {
                 "id": "from 0.0.0.0_0:8086",
-                "path": "ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:8086",
+                "path": "modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:8086",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
                   "aws:cdk:cloudformation:props": {
@@ -1008,7 +1008,7 @@
               },
               "from 0.0.0.0_0:80": {
                 "id": "from 0.0.0.0_0:80",
-                "path": "ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:80",
+                "path": "modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:80",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
                   "aws:cdk:cloudformation:props": {
@@ -1025,33 +1025,35 @@
               }
             }
           },
-          "awsvpc-verta-ai-ecs-cluster": {
-            "id": "awsvpc-verta-ai-ecs-cluster",
-            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster",
+          "modeldb-ecs-cluster": {
+            "id": "modeldb-ecs-cluster",
+            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/Resource",
+                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
-                  "aws:cdk:cloudformation:props": {}
+                  "aws:cdk:cloudformation:props": {
+                    "clusterName": "modeldb-ecs-cluster"
+                  }
                 }
               },
               "DefaultAutoScalingGroup": {
                 "id": "DefaultAutoScalingGroup",
-                "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup",
+                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup",
                 "children": {
                   "InstanceSecurityGroup": {
                     "id": "InstanceSecurityGroup",
-                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
                           "aws:cdk:cloudformation:props": {
-                            "groupDescription": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup",
+                            "groupDescription": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup",
                             "securityGroupEgress": [
                               {
                                 "cidrIp": "0.0.0.0/0",
@@ -1062,12 +1064,37 @@
                             "tags": [
                               {
                                 "key": "Name",
-                                "value": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup"
+                                "value": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup"
                               }
                             ],
                             "vpcId": {
-                              "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpc8378EB38272D6E3A"
+                              "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpc8378EB38272D6E3A"
                             }
+                          }
+                        }
+                      },
+                      "from modeldbecsclusterstackmodeldbecsserviceLBSecurityGroup928CF400:32768-65535": {
+                        "id": "from modeldbecsclusterstackmodeldbecsserviceLBSecurityGroup928CF400:32768-65535",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup/from modeldbecsclusterstackmodeldbecsserviceLBSecurityGroup928CF400:32768-65535",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                          "aws:cdk:cloudformation:props": {
+                            "ipProtocol": "tcp",
+                            "description": "Load balancer to target",
+                            "fromPort": 32768,
+                            "groupId": {
+                              "Fn::GetAtt": [
+                                "modeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFF284E8D",
+                                "GroupId"
+                              ]
+                            },
+                            "sourceSecurityGroupId": {
+                              "Fn::GetAtt": [
+                                "modeldbecsserviceLBSecurityGroup4AB093DA",
+                                "GroupId"
+                              ]
+                            },
+                            "toPort": 65535
                           }
                         }
                       }
@@ -1075,11 +1102,11 @@
                   },
                   "InstanceRole": {
                     "id": "InstanceRole",
-                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceRole",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceRole",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                           "aws:cdk:cloudformation:props": {
@@ -1108,7 +1135,7 @@
                             "tags": [
                               {
                                 "key": "Name",
-                                "value": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup"
+                                "value": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup"
                               }
                             ]
                           }
@@ -1116,11 +1143,11 @@
                       },
                       "DefaultPolicy": {
                         "id": "DefaultPolicy",
-                        "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/DefaultPolicy",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/DefaultPolicy",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/DefaultPolicy/Resource",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/DefaultPolicy/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                               "aws:cdk:cloudformation:props": {
@@ -1145,10 +1172,10 @@
                                   ],
                                   "Version": "2012-10-17"
                                 },
-                                "policyName": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy86D959DB",
+                                "policyName": "modeldbecsclusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy56A44B28",
                                 "roles": [
                                   {
-                                    "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceRoleCB1DBF6B"
+                                    "Ref": "modeldbecsclusterDefaultAutoScalingGroupInstanceRoleF55C5BA3"
                                   }
                                 ]
                               }
@@ -1160,13 +1187,13 @@
                   },
                   "InstanceProfile": {
                     "id": "InstanceProfile",
-                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceProfile",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceProfile",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
                       "aws:cdk:cloudformation:props": {
                         "roles": [
                           {
-                            "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceRoleCB1DBF6B"
+                            "Ref": "modeldbecsclusterDefaultAutoScalingGroupInstanceRoleF55C5BA3"
                           }
                         ]
                       }
@@ -1174,22 +1201,23 @@
                   },
                   "LaunchConfig": {
                     "id": "LaunchConfig",
-                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LaunchConfig",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LaunchConfig",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::AutoScaling::LaunchConfiguration",
                       "aws:cdk:cloudformation:props": {
                         "imageId": {
                           "Ref": "SsmParameterValueawsserviceecsoptimizedamiamazonlinux2recommendedimageidC96584B6F00A464EAD1953AFF4B05118Parameter"
                         },
-                        "instanceType": "t2.micro",
+                        "instanceType": "m4.large",
+                        "associatePublicIpAddress": true,
                         "iamInstanceProfile": {
-                          "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceProfile7539F89A"
+                          "Ref": "modeldbecsclusterDefaultAutoScalingGroupInstanceProfile7949990E"
                         },
                         "keyName": "datafy-keypair",
                         "securityGroups": [
                           {
                             "Fn::GetAtt": [
-                              "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceSecurityGroup3CEA3F4C",
+                              "modeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFF284E8D",
                               "GroupId"
                             ]
                           },
@@ -1204,13 +1232,13 @@
                               [
                                 "#!/bin/bash\necho ECS_CLUSTER=",
                                 {
-                                  "Ref": "awsvpcvertaaiecsclusterB1DFD127"
+                                  "Ref": "modeldbecscluster855068CD"
                                 },
                                 " >> /etc/ecs/ecs.config\nsudo iptables --insert FORWARD 1 --in-interface docker+ --destination 169.254.169.254/32 --jump DROP\nsudo service iptables save\necho ECS_AWSVPC_BLOCK_IMDS=true >> /etc/ecs/ecs.config\n\n#!/bin/bash\nmkdir -p /ecs/backend/config/\ncat <<< '\n#This config is used by docker compose.\n#ModelDB Properties\ngrpcServer:\n  port: 8085\n\nspringServer:\n  port: 8086\n  shutdownTimeout: 30 #time in second\n\nartifactStoreConfig:\n  artifactStoreType: NFS #S3, GCP, NFS\n  NFS:\n    nfsUrlProtocol: http\n    nfsRootPath: /artifact-store/\n    artifactEndpoint:\n      getArtifact: \"api/v1/artifact/getArtifact\"\n      storeArtifact: \"api/v1/artifact/storeArtifact\"\n\n# Database settings (type mongodb, couchbasedb, relational etc..)\ndatabase:\n  DBType: relational\n  timeout: 4\n  liquibaseLockThreshold: 60 #time in second\n  RdbConfiguration:\n    RdbDatabaseName: postgres\n    RdbDriver: \"org.postgresql.Driver\"\n    RdbDialect: \"org.hibernate.dialect.PostgreSQLDialect\"\n    RdbUrl: \"",
                                 {
                                   "Fn::ImportValue": "modeldb-rds-url"
                                 },
-                                "\"\n    RdbUsername: \"postgres\"\n    RdbPassword: \"testpassword\"\n\n# Test Database settings (type mongodb, couchbasedb etc..)\ntest:\n  test-database:\n    DBType: relational\n    timeout: 4\n    liquibaseLockThreshold: 60 #time in second\n    RdbConfiguration:\n      RdbDatabaseName: postgres\n      RdbDriver: \"org.postgresql.Driver\"\n      RdbDialect: \"org.hibernate.dialect.PostgreSQLDialect\"\n      RdbUrl: \"jdbc:postgresql://modeldb-postgres:5432\"\n      RdbUsername: postgres\n      RdbPassword: root\n\n#ArtifactStore Properties\nartifactStore_grpcServer:\n  host: modeldb-backend\n  port: 8086\n\ntelemetry:\n  opt_in: true\n  frequency: 1 #frequency to share data in hours, default 1\n  consumer: https://app.verta.ai/api/v1/uac-proxy/telemetry/collectTelemetry' > /ecs/backend/config/config.yaml"
+                                "\"\n    RdbUsername: \"postgres\"\n    RdbPassword: \"D)!on0:wi.$*Oz}yKFCiN&+z!>>5FO\"\n\n# Test Database settings (type mongodb, couchbasedb etc..)\ntest:\n  test-database:\n    DBType: relational\n    timeout: 4\n    liquibaseLockThreshold: 60 #time in second\n    RdbConfiguration:\n      RdbDatabaseName: postgres\n      RdbDriver: \"org.postgresql.Driver\"\n      RdbDialect: \"org.hibernate.dialect.PostgreSQLDialect\"\n      RdbUrl: \"jdbc:postgresql://modeldb-postgres:5432\"\n      RdbUsername: postgres\n      RdbPassword: root\n\n#ArtifactStore Properties\nartifactStore_grpcServer:\n  host: modeldb-backend\n  port: 8086\n\ntelemetry:\n  opt_in: true\n  frequency: 1 #frequency to share data in hours, default 1\n  consumer: https://app.verta.ai/api/v1/uac-proxy/telemetry/collectTelemetry' > /ecs/backend/config/config.yaml"
                               ]
                             ]
                           }
@@ -1220,28 +1248,28 @@
                   },
                   "ASG": {
                     "id": "ASG",
-                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/ASG",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/ASG",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
                       "aws:cdk:cloudformation:props": {
                         "maxSize": "1",
                         "minSize": "1",
                         "launchConfigurationName": {
-                          "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLaunchConfigACF2147C"
+                          "Ref": "modeldbecsclusterDefaultAutoScalingGroupLaunchConfigF4E6055D"
                         },
                         "tags": [
                           {
                             "key": "Name",
-                            "value": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup",
+                            "value": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup",
                             "propagateAtLaunch": true
                           }
                         ],
                         "vpcZoneIdentifier": [
                           {
-                            "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcingressSubnet1Subnet059F22C68B714600"
+                            "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcingressSubnet1Subnet059F22C68B714600"
                           },
                           {
-                            "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcingressSubnet2SubnetF175D754472AB14E"
+                            "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcingressSubnet2SubnetF175D754472AB14E"
                           }
                         ]
                       }
@@ -1249,19 +1277,19 @@
                   },
                   "DrainECSHook": {
                     "id": "DrainECSHook",
-                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook",
                     "children": {
                       "Function": {
                         "id": "Function",
-                        "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function",
                         "children": {
                           "ServiceRole": {
                             "id": "ServiceRole",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole",
                             "children": {
                               "Resource": {
                                 "id": "Resource",
-                                "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/Resource",
+                                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                                   "aws:cdk:cloudformation:props": {
@@ -1294,7 +1322,7 @@
                                     "tags": [
                                       {
                                         "key": "Name",
-                                        "value": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup"
+                                        "value": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup"
                                       }
                                     ]
                                   }
@@ -1302,11 +1330,11 @@
                               },
                               "DefaultPolicy": {
                                 "id": "DefaultPolicy",
-                                "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/DefaultPolicy",
+                                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/DefaultPolicy",
                                 "children": {
                                   "Resource": {
                                     "id": "Resource",
-                                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/DefaultPolicy/Resource",
+                                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/DefaultPolicy/Resource",
                                     "attributes": {
                                       "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                                       "aws:cdk:cloudformation:props": {
@@ -1343,7 +1371,7 @@
                                                     },
                                                     ":autoScalingGroup:*:autoScalingGroupName/",
                                                     {
-                                                      "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupASG82CCB875"
+                                                      "Ref": "modeldbecsclusterDefaultAutoScalingGroupASG6849224B"
                                                     }
                                                   ]
                                                 ]
@@ -1366,7 +1394,7 @@
                                               "Effect": "Allow",
                                               "Resource": {
                                                 "Fn::GetAtt": [
-                                                  "awsvpcvertaaiecsclusterB1DFD127",
+                                                  "modeldbecscluster855068CD",
                                                   "Arn"
                                                 ]
                                               }
@@ -1380,7 +1408,7 @@
                                                 "ArnEquals": {
                                                   "ecs:cluster": {
                                                     "Fn::GetAtt": [
-                                                      "awsvpcvertaaiecsclusterB1DFD127",
+                                                      "modeldbecscluster855068CD",
                                                       "Arn"
                                                     ]
                                                   }
@@ -1392,10 +1420,10 @@
                                           ],
                                           "Version": "2012-10-17"
                                         },
-                                        "policyName": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicyF2B9A895",
+                                        "policyName": "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicyA17A9D92",
                                         "roles": [
                                           {
-                                            "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole14F4070E"
+                                            "Ref": "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleB9FE9393"
                                           }
                                         ]
                                       }
@@ -1407,7 +1435,7 @@
                           },
                           "Resource": {
                             "id": "Resource",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Resource",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                               "aws:cdk:cloudformation:props": {
@@ -1417,7 +1445,7 @@
                                 "handler": "index.lambda_handler",
                                 "role": {
                                   "Fn::GetAtt": [
-                                    "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole14F4070E",
+                                    "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleB9FE9393",
                                     "Arn"
                                   ]
                                 },
@@ -1425,57 +1453,57 @@
                                 "environment": {
                                   "variables": {
                                     "CLUSTER": {
-                                      "Ref": "awsvpcvertaaiecsclusterB1DFD127"
+                                      "Ref": "modeldbecscluster855068CD"
                                     }
                                   }
                                 },
                                 "tags": [
                                   {
                                     "key": "Name",
-                                    "value": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup"
+                                    "value": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup"
                                   }
                                 ],
                                 "timeout": 310
                               }
                             }
                           },
-                          "AllowInvoke:ModelDbECSClusterStackawsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicD294E6AA": {
-                            "id": "AllowInvoke:ModelDbECSClusterStackawsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicD294E6AA",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/AllowInvoke:ModelDbECSClusterStackawsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicD294E6AA",
+                          "AllowInvoke:modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicEC4AF99A": {
+                            "id": "AllowInvoke:modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicEC4AF99A",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/AllowInvoke:modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicEC4AF99A",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                               "aws:cdk:cloudformation:props": {
                                 "action": "lambda:InvokeFunction",
                                 "functionName": {
                                   "Fn::GetAtt": [
-                                    "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunction52229B7A",
+                                    "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionEB31DDC3",
                                     "Arn"
                                   ]
                                 },
                                 "principal": "sns.amazonaws.com",
                                 "sourceArn": {
-                                  "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic8CD6BECA"
+                                  "Ref": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicB1E0F16E"
                                 }
                               }
                             }
                           },
                           "Topic": {
                             "id": "Topic",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Topic",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Topic",
                             "children": {
                               "Resource": {
                                 "id": "Resource",
-                                "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Topic/Resource",
+                                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Topic/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::SNS::Subscription",
                                   "aws:cdk:cloudformation:props": {
                                     "protocol": "lambda",
                                     "topicArn": {
-                                      "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic8CD6BECA"
+                                      "Ref": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicB1E0F16E"
                                     },
                                     "endpoint": {
                                       "Fn::GetAtt": [
-                                        "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunction52229B7A",
+                                        "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionEB31DDC3",
                                         "Arn"
                                       ]
                                     }
@@ -1490,15 +1518,15 @@
                   },
                   "LifecycleHookDrainHook": {
                     "id": "LifecycleHookDrainHook",
-                    "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook",
                     "children": {
                       "Role": {
                         "id": "Role",
-                        "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/Resource",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                               "aws:cdk:cloudformation:props": {
@@ -1517,7 +1545,7 @@
                                 "tags": [
                                   {
                                     "key": "Name",
-                                    "value": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup"
+                                    "value": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup"
                                   }
                                 ]
                               }
@@ -1525,11 +1553,11 @@
                           },
                           "DefaultPolicy": {
                             "id": "DefaultPolicy",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/DefaultPolicy",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/DefaultPolicy",
                             "children": {
                               "Resource": {
                                 "id": "Resource",
-                                "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/DefaultPolicy/Resource",
+                                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/DefaultPolicy/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                                   "aws:cdk:cloudformation:props": {
@@ -1539,16 +1567,16 @@
                                           "Action": "sns:Publish",
                                           "Effect": "Allow",
                                           "Resource": {
-                                            "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic8CD6BECA"
+                                            "Ref": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicB1E0F16E"
                                           }
                                         }
                                       ],
                                       "Version": "2012-10-17"
                                     },
-                                    "policyName": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy34519B50",
+                                    "policyName": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy34BC9AD6",
                                     "roles": [
                                       {
-                                        "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleE03641B3"
+                                        "Ref": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRole6FFDCEA1"
                                       }
                                     ]
                                   }
@@ -1560,18 +1588,18 @@
                       },
                       "Topic": {
                         "id": "Topic",
-                        "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Topic",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Topic",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Topic/Resource",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Topic/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::SNS::Topic",
                               "aws:cdk:cloudformation:props": {
                                 "tags": [
                                   {
                                     "key": "Name",
-                                    "value": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup"
+                                    "value": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup"
                                   }
                                 ]
                               }
@@ -1581,22 +1609,22 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::AutoScaling::LifecycleHook",
                           "aws:cdk:cloudformation:props": {
                             "autoScalingGroupName": {
-                              "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupASG82CCB875"
+                              "Ref": "modeldbecsclusterDefaultAutoScalingGroupASG6849224B"
                             },
                             "lifecycleTransition": "autoscaling:EC2_INSTANCE_TERMINATING",
                             "defaultResult": "CONTINUE",
                             "heartbeatTimeout": 300,
                             "notificationTargetArn": {
-                              "Ref": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic8CD6BECA"
+                              "Ref": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicB1E0F16E"
                             },
                             "roleArn": {
                               "Fn::GetAtt": [
-                                "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleE03641B3",
+                                "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRole6FFDCEA1",
                                 "Arn"
                               ]
                             }
@@ -1611,23 +1639,23 @@
           },
           "SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
             "id": "SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "path": "ModelDbECSClusterStack/SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter"
+            "path": "modeldb-ecs-cluster-stack/SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter"
           },
           "SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118": {
             "id": "SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "path": "ModelDbECSClusterStack/SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118"
+            "path": "modeldb-ecs-cluster-stack/SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118"
           },
           "modeldb-awspvc": {
             "id": "modeldb-awspvc",
-            "path": "ModelDbECSClusterStack/modeldb-awspvc",
+            "path": "modeldb-ecs-cluster-stack/modeldb-awspvc",
             "children": {
               "TaskRole": {
                 "id": "TaskRole",
-                "path": "ModelDbECSClusterStack/modeldb-awspvc/TaskRole",
+                "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/TaskRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "ModelDbECSClusterStack/modeldb-awspvc/TaskRole/Resource",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/TaskRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -1650,59 +1678,11 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "ModelDbECSClusterStack/modeldb-awspvc/Resource",
+                "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
                   "aws:cdk:cloudformation:props": {
                     "containerDefinitions": [
-                      {
-                        "cpu": 100,
-                        "essential": true,
-                        "image": "vertaaiofficial/modeldb-frontend:latest",
-                        "memory": 256,
-                        "name": "modeldb-frontend",
-                        "portMappings": [
-                          {
-                            "containerPort": 80,
-                            "hostPort": 80,
-                            "protocol": "tcp"
-                          }
-                        ],
-                        "logConfiguration": {
-                          "logDriver": "awslogs",
-                          "options": {
-                            "awslogs-group": {
-                              "Ref": "modeldbawspvcmodeldbfrontendLogGroup93626B92"
-                            },
-                            "awslogs-stream-prefix": "verta-ai-aws-ecs-service",
-                            "awslogs-region": {
-                              "Ref": "AWS::Region"
-                            }
-                          }
-                        },
-                        "environment": [
-                          {
-                            "name": "DEPLOYED",
-                            "value": "yes"
-                          },
-                          {
-                            "name": "BACKEND_API_PROTOCOL",
-                            "value": "http"
-                          },
-                          {
-                            "name": "BACKEND_API_DOMAIN",
-                            "value": "modeldb-proxy:8080"
-                          },
-                          {
-                            "name": "MDB_ADDRESS",
-                            "value": "http://modeldb-proxy:8080"
-                          },
-                          {
-                            "name": "ARTIFACTORY_ADDRESS",
-                            "value": "http://modeldb-backend:8086"
-                          }
-                        ]
-                      },
                       {
                         "cpu": 100,
                         "essential": true,
@@ -1795,7 +1775,7 @@
                         "Arn"
                       ]
                     },
-                    "family": "ModelDbECSClusterStackmodeldbawspvc38C2AAAE",
+                    "family": "modeldbecsclusterstackmodeldbawspvc71D9FE69",
                     "networkMode": "awsvpc",
                     "requiresCompatibilities": [
                       "EC2"
@@ -1823,17 +1803,17 @@
                   }
                 }
               },
-              "modeldb-frontend": {
-                "id": "modeldb-frontend",
-                "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-frontend",
+              "modeldb-backend": {
+                "id": "modeldb-backend",
+                "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-backend",
                 "children": {
                   "LogGroup": {
                     "id": "LogGroup",
-                    "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-frontend/LogGroup",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-backend/LogGroup",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-frontend/LogGroup/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-backend/LogGroup/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
                           "aws:cdk:cloudformation:props": {}
@@ -1845,11 +1825,11 @@
               },
               "ExecutionRole": {
                 "id": "ExecutionRole",
-                "path": "ModelDbECSClusterStack/modeldb-awspvc/ExecutionRole",
+                "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/ExecutionRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "ModelDbECSClusterStack/modeldb-awspvc/ExecutionRole/Resource",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/ExecutionRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -1870,29 +1850,16 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "ModelDbECSClusterStack/modeldb-awspvc/ExecutionRole/DefaultPolicy",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/ExecutionRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/modeldb-awspvc/ExecutionRole/DefaultPolicy/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/ExecutionRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
                             "policyDocument": {
                               "Statement": [
-                                {
-                                  "Action": [
-                                    "logs:CreateLogStream",
-                                    "logs:PutLogEvents"
-                                  ],
-                                  "Effect": "Allow",
-                                  "Resource": {
-                                    "Fn::GetAtt": [
-                                      "modeldbawspvcmodeldbfrontendLogGroup93626B92",
-                                      "Arn"
-                                    ]
-                                  }
-                                },
                                 {
                                   "Action": [
                                     "logs:CreateLogStream",
@@ -1935,37 +1902,17 @@
                   }
                 }
               },
-              "modeldb-backend": {
-                "id": "modeldb-backend",
-                "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-backend",
-                "children": {
-                  "LogGroup": {
-                    "id": "LogGroup",
-                    "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-backend/LogGroup",
-                    "children": {
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-backend/LogGroup/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
-                          "aws:cdk:cloudformation:props": {}
-                        }
-                      }
-                    }
-                  }
-                }
-              },
               "modeldb-proxy": {
                 "id": "modeldb-proxy",
-                "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-proxy",
+                "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-proxy",
                 "children": {
                   "LogGroup": {
                     "id": "LogGroup",
-                    "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-proxy/LogGroup",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-proxy/LogGroup",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/modeldb-awspvc/modeldb-proxy/LogGroup/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-proxy/LogGroup/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
                           "aws:cdk:cloudformation:props": {}
@@ -1977,17 +1924,65 @@
               }
             }
           },
+          "modeldb-backend-service": {
+            "id": "modeldb-backend-service",
+            "path": "modeldb-ecs-cluster-stack/modeldb-backend-service",
+            "children": {
+              "Service": {
+                "id": "Service",
+                "path": "modeldb-ecs-cluster-stack/modeldb-backend-service/Service",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                  "aws:cdk:cloudformation:props": {
+                    "cluster": {
+                      "Ref": "modeldbecscluster855068CD"
+                    },
+                    "deploymentConfiguration": {
+                      "maximumPercent": 200,
+                      "minimumHealthyPercent": 50
+                    },
+                    "desiredCount": 1,
+                    "enableEcsManagedTags": false,
+                    "launchType": "EC2",
+                    "networkConfiguration": {
+                      "awsvpcConfiguration": {
+                        "assignPublicIp": "DISABLED",
+                        "subnets": [
+                          {
+                            "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcapplicationSubnet1Subnet8B68205B1F66BB2C"
+                          },
+                          {
+                            "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcapplicationSubnet2Subnet296709622ABA6FC7"
+                          }
+                        ],
+                        "securityGroups": [
+                          {
+                            "Fn::ImportValue": "modeldb-application-sg"
+                          }
+                        ]
+                      }
+                    },
+                    "schedulingStrategy": "REPLICA",
+                    "serviceName": "modeldb-backend-service",
+                    "taskDefinition": {
+                      "Ref": "modeldbawspvc2B97D0AF"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "modeldb-ecs-service": {
             "id": "modeldb-ecs-service",
-            "path": "ModelDbECSClusterStack/modeldb-ecs-service",
+            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service",
             "children": {
               "LB": {
                 "id": "LB",
-                "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB",
+                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/Resource",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
                       "aws:cdk:cloudformation:props": {
@@ -2002,10 +1997,10 @@
                         ],
                         "subnets": [
                           {
-                            "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcingressSubnet1Subnet059F22C68B714600"
+                            "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcingressSubnet1Subnet059F22C68B714600"
                           },
                           {
-                            "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcingressSubnet2SubnetF175D754472AB14E"
+                            "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpcingressSubnet2SubnetF175D754472AB14E"
                           }
                         ],
                         "type": "application"
@@ -2014,15 +2009,15 @@
                   },
                   "SecurityGroup": {
                     "id": "SecurityGroup",
-                    "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/SecurityGroup",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/SecurityGroup",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/SecurityGroup/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/SecurityGroup/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
                           "aws:cdk:cloudformation:props": {
-                            "groupDescription": "Automatically created Security Group for ELB ModelDbECSClusterStackmodeldbecsserviceLBFE2DEDA8",
+                            "groupDescription": "Automatically created Security Group for ELB modeldbecsclusterstackmodeldbecsserviceLB3D1EB752",
                             "securityGroupIngress": [
                               {
                                 "cidrIp": "0.0.0.0/0",
@@ -2033,14 +2028,14 @@
                               }
                             ],
                             "vpcId": {
-                              "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpc8378EB38272D6E3A"
+                              "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpc8378EB38272D6E3A"
                             }
                           }
                         }
                       },
-                      "to ModelDbECSClusterStackmodeldbecsserviceServiceSecurityGroup7DA545DC:80": {
-                        "id": "to ModelDbECSClusterStackmodeldbecsserviceServiceSecurityGroup7DA545DC:80",
-                        "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/SecurityGroup/to ModelDbECSClusterStackmodeldbecsserviceServiceSecurityGroup7DA545DC:80",
+                      "to modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFA53A763:32768-65535": {
+                        "id": "to modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFA53A763:32768-65535",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/SecurityGroup/to modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFA53A763:32768-65535",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
                           "aws:cdk:cloudformation:props": {
@@ -2054,12 +2049,12 @@
                             "description": "Load balancer to target",
                             "destinationSecurityGroupId": {
                               "Fn::GetAtt": [
-                                "modeldbecsserviceServiceSecurityGroup433449ED",
+                                "modeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFF284E8D",
                                 "GroupId"
                               ]
                             },
-                            "fromPort": 80,
-                            "toPort": 80
+                            "fromPort": 32768,
+                            "toPort": 65535
                           }
                         }
                       }
@@ -2067,11 +2062,11 @@
                   },
                   "PublicListener": {
                     "id": "PublicListener",
-                    "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/PublicListener",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/PublicListener",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/PublicListener/Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/PublicListener/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
                           "aws:cdk:cloudformation:props": {
@@ -2093,19 +2088,19 @@
                       },
                       "ECSGroup": {
                         "id": "ECSGroup",
-                        "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/PublicListener/ECSGroup",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/PublicListener/ECSGroup",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "ModelDbECSClusterStack/modeldb-ecs-service/LB/PublicListener/ECSGroup/Resource",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/PublicListener/ECSGroup/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
                               "aws:cdk:cloudformation:props": {
                                 "port": 80,
                                 "protocol": "HTTP",
-                                "targetType": "ip",
+                                "targetType": "instance",
                                 "vpcId": {
-                                  "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpc8378EB38272D6E3A"
+                                  "Fn::ImportValue": "ml-base-infra-stack:ExportsOutputRefVpc8378EB38272D6E3A"
                                 }
                               }
                             }
@@ -2118,24 +2113,219 @@
               },
               "LoadBalancerDNS": {
                 "id": "LoadBalancerDNS",
-                "path": "ModelDbECSClusterStack/modeldb-ecs-service/LoadBalancerDNS"
+                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/LoadBalancerDNS"
               },
               "ServiceURL": {
                 "id": "ServiceURL",
-                "path": "ModelDbECSClusterStack/modeldb-ecs-service/ServiceURL"
+                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/ServiceURL"
+              },
+              "TaskDef": {
+                "id": "TaskDef",
+                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef",
+                "children": {
+                  "TaskRole": {
+                    "id": "TaskRole",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/TaskRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/TaskRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ecs-tasks.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                      "aws:cdk:cloudformation:props": {
+                        "containerDefinitions": [
+                          {
+                            "cpu": 100,
+                            "essential": true,
+                            "image": "vertaaiofficial/modeldb-frontend:latest",
+                            "memory": 256,
+                            "name": "modeldb-frontend",
+                            "portMappings": [
+                              {
+                                "containerPort": 3000,
+                                "hostPort": 0,
+                                "protocol": "tcp"
+                              }
+                            ],
+                            "logConfiguration": {
+                              "logDriver": "awslogs",
+                              "options": {
+                                "awslogs-group": {
+                                  "Ref": "modeldbecsserviceTaskDefmodeldbfrontendLogGroup1A9A16F2"
+                                },
+                                "awslogs-stream-prefix": "verta-ai-aws-ecs-service",
+                                "awslogs-region": {
+                                  "Ref": "AWS::Region"
+                                }
+                              }
+                            },
+                            "environment": [
+                              {
+                                "name": "DEPLOYED",
+                                "value": "yes"
+                              },
+                              {
+                                "name": "BACKEND_API_PROTOCOL",
+                                "value": "http"
+                              },
+                              {
+                                "name": "BACKEND_API_DOMAIN",
+                                "value": "modeldb-proxy:8080"
+                              },
+                              {
+                                "name": "MDB_ADDRESS",
+                                "value": "http://modeldb-proxy:8080"
+                              },
+                              {
+                                "name": "ARTIFACTORY_ADDRESS",
+                                "value": "http://modeldb-backend:8086"
+                              }
+                            ]
+                          }
+                        ],
+                        "executionRoleArn": {
+                          "Fn::GetAtt": [
+                            "modeldbecsserviceTaskDefExecutionRoleEE2BA254",
+                            "Arn"
+                          ]
+                        },
+                        "family": "modeldbecsclusterstackmodeldbecsserviceTaskDefDCCE4DB9",
+                        "networkMode": "bridge",
+                        "requiresCompatibilities": [
+                          "EC2"
+                        ],
+                        "taskRoleArn": {
+                          "Fn::GetAtt": [
+                            "modeldbecsserviceTaskDefTaskRoleB859DC18",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "modeldb-frontend": {
+                    "id": "modeldb-frontend",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/modeldb-frontend",
+                    "children": {
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/modeldb-frontend/LogGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/modeldb-frontend/LogGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                              "aws:cdk:cloudformation:props": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ExecutionRole": {
+                    "id": "ExecutionRole",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/ExecutionRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/ExecutionRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ecs-tasks.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/ExecutionRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/ExecutionRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "modeldbecsserviceTaskDefmodeldbfrontendLogGroup1A9A16F2",
+                                          "Arn"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "modeldbecsserviceTaskDefExecutionRoleDefaultPolicy2062D11E",
+                                "roles": [
+                                  {
+                                    "Ref": "modeldbecsserviceTaskDefExecutionRoleEE2BA254"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               },
               "Service": {
                 "id": "Service",
-                "path": "ModelDbECSClusterStack/modeldb-ecs-service/Service",
+                "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/Service",
                 "children": {
                   "Service": {
                     "id": "Service",
-                    "path": "ModelDbECSClusterStack/modeldb-ecs-service/Service/Service",
+                    "path": "modeldb-ecs-cluster-stack/modeldb-ecs-service/Service/Service",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ECS::Service",
                       "aws:cdk:cloudformation:props": {
                         "cluster": {
-                          "Ref": "awsvpcvertaaiecsclusterB1DFD127"
+                          "Ref": "modeldbecscluster855068CD"
                         },
                         "deploymentConfiguration": {
                           "maximumPercent": 200,
@@ -2151,85 +2341,13 @@
                               "Ref": "modeldbecsserviceLBPublicListenerECSGroup0CDFD2A5"
                             },
                             "containerName": "modeldb-frontend",
-                            "containerPort": 80
+                            "containerPort": 3000
                           }
                         ],
-                        "networkConfiguration": {
-                          "awsvpcConfiguration": {
-                            "assignPublicIp": "DISABLED",
-                            "subnets": [
-                              {
-                                "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcapplicationSubnet1Subnet8B68205B1F66BB2C"
-                              },
-                              {
-                                "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpcapplicationSubnet2Subnet296709622ABA6FC7"
-                              }
-                            ],
-                            "securityGroups": [
-                              {
-                                "Fn::GetAtt": [
-                                  "modeldbecsserviceServiceSecurityGroup433449ED",
-                                  "GroupId"
-                                ]
-                              }
-                            ]
-                          }
-                        },
                         "schedulingStrategy": "REPLICA",
-                        "serviceName": "modeldb-ecs-service",
+                        "serviceName": "modeldb-frontend-service",
                         "taskDefinition": {
-                          "Ref": "modeldbawspvc2B97D0AF"
-                        }
-                      }
-                    }
-                  },
-                  "SecurityGroup": {
-                    "id": "SecurityGroup",
-                    "path": "ModelDbECSClusterStack/modeldb-ecs-service/Service/SecurityGroup",
-                    "children": {
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "ModelDbECSClusterStack/modeldb-ecs-service/Service/SecurityGroup/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
-                          "aws:cdk:cloudformation:props": {
-                            "groupDescription": "ModelDbECSClusterStack/modeldb-ecs-service/Service/SecurityGroup",
-                            "securityGroupEgress": [
-                              {
-                                "cidrIp": "0.0.0.0/0",
-                                "description": "Allow all outbound traffic by default",
-                                "ipProtocol": "-1"
-                              }
-                            ],
-                            "vpcId": {
-                              "Fn::ImportValue": "MLInfraVpc:ExportsOutputRefVpc8378EB38272D6E3A"
-                            }
-                          }
-                        }
-                      },
-                      "from ModelDbECSClusterStackmodeldbecsserviceLBSecurityGroup86B1BD69:80": {
-                        "id": "from ModelDbECSClusterStackmodeldbecsserviceLBSecurityGroup86B1BD69:80",
-                        "path": "ModelDbECSClusterStack/modeldb-ecs-service/Service/SecurityGroup/from ModelDbECSClusterStackmodeldbecsserviceLBSecurityGroup86B1BD69:80",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
-                          "aws:cdk:cloudformation:props": {
-                            "ipProtocol": "tcp",
-                            "description": "Load balancer to target",
-                            "fromPort": 80,
-                            "groupId": {
-                              "Fn::GetAtt": [
-                                "modeldbecsserviceServiceSecurityGroup433449ED",
-                                "GroupId"
-                              ]
-                            },
-                            "sourceSecurityGroupId": {
-                              "Fn::GetAtt": [
-                                "modeldbecsserviceLBSecurityGroup4AB093DA",
-                                "GroupId"
-                              ]
-                            },
-                            "toPort": 80
-                          }
+                          "Ref": "modeldbecsserviceTaskDef77AC47AB"
                         }
                       }
                     }

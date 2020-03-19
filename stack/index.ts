@@ -7,9 +7,9 @@ import cdk = require('@aws-cdk/core');
 
 const app = new cdk.App();
 
-const vpcStack = new VpcStack(app, 'MLInfraVpc', );
+const vpcStack = new VpcStack(app, 'ml-base-infra-stack', );
 
-const rdsStack = new RDSStack(app, 'ModelDbRDSStack', {
+const rdsStack = new RDSStack(app, 'modeldb-rds-stack', {
     vpc: vpcStack.vpc,
     username: 'postgres',
     databaseName: 'postgres',
@@ -17,7 +17,7 @@ const rdsStack = new RDSStack(app, 'ModelDbRDSStack', {
 });
 rdsStack.addDependency(vpcStack);
 
-const ecsStack = new ECSStack(app, 'ModelDbECSClusterStack', {
+const ecsStack = new ECSStack(app, 'modeldb-ecs-cluster-stack', {
     vpc: vpcStack.vpc,
     dbUsername: 'postgres'
 });

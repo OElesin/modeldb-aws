@@ -7,14 +7,14 @@
         "file": "tree.json"
       }
     },
-    "MLInfraVpc": {
+    "ml-base-infra-stack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "MLInfraVpc.template.json"
+        "templateFile": "ml-base-infra-stack.template.json"
       },
       "metadata": {
-        "/MLInfraVpc/Vpc/Resource": [
+        "/ml-base-infra-stack/Vpc/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "Vpc8378EB38",
@@ -40,7 +40,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet1/Subnet": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet1/Subnet": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet1Subnet059F22C6",
@@ -72,7 +72,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet1/RouteTable": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet1/RouteTable": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet1RouteTable804C7A26",
@@ -104,7 +104,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet1/RouteTableAssociation": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet1/RouteTableAssociation": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet1RouteTableAssociation5DF54E70",
@@ -136,7 +136,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet1/DefaultRoute": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet1/DefaultRoute": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet1DefaultRoute4188A546",
@@ -165,7 +165,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet1/EIP": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet1/EIP": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet1EIPD1FA297B",
@@ -194,7 +194,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet1/NATGateway": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet1/NATGateway": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet1NATGateway5ADD866D",
@@ -223,7 +223,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet2/Subnet": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet2/Subnet": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet2SubnetF175D754",
@@ -255,7 +255,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet2/RouteTable": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet2/RouteTable": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet2RouteTable8B0E23A7",
@@ -287,7 +287,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet2/RouteTableAssociation": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet2/RouteTableAssociation": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet2RouteTableAssociation39E1BA3A",
@@ -319,7 +319,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet2/DefaultRoute": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet2/DefaultRoute": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet2DefaultRoute18203BC3",
@@ -348,7 +348,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet2/EIP": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet2/EIP": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet2EIP87470ECB",
@@ -377,7 +377,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/ingressSubnet2/NATGateway": [
+        "/ml-base-infra-stack/Vpc/ingressSubnet2/NATGateway": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcingressSubnet2NATGatewayDAA0F549",
@@ -406,7 +406,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet1/Subnet": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet1/Subnet": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet1Subnet8B68205B",
@@ -438,7 +438,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet1/RouteTable": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet1/RouteTable": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet1RouteTableF03E8296",
@@ -470,7 +470,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet1/RouteTableAssociation": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet1/RouteTableAssociation": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet1RouteTableAssociation75D5245D",
@@ -502,7 +502,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet1/DefaultRoute": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet1/DefaultRoute": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet1DefaultRouteD1F37131",
@@ -532,7 +532,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet2/Subnet": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet2/Subnet": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet2Subnet29670962",
@@ -564,7 +564,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet2/RouteTable": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet2/RouteTable": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet2RouteTable17378AED",
@@ -596,7 +596,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet2/RouteTableAssociation": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet2/RouteTableAssociation": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet2RouteTableAssociationF25110CC",
@@ -628,7 +628,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/applicationSubnet2/DefaultRoute": [
+        "/ml-base-infra-stack/Vpc/applicationSubnet2/DefaultRoute": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcapplicationSubnet2DefaultRoute928D347B",
@@ -658,7 +658,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/rdsSubnet1/Subnet": [
+        "/ml-base-infra-stack/Vpc/rdsSubnet1/Subnet": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcrdsSubnet1SubnetC2926CEA",
@@ -690,7 +690,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/rdsSubnet1/RouteTable": [
+        "/ml-base-infra-stack/Vpc/rdsSubnet1/RouteTable": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcrdsSubnet1RouteTableE62E4ED6",
@@ -722,7 +722,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/rdsSubnet1/RouteTableAssociation": [
+        "/ml-base-infra-stack/Vpc/rdsSubnet1/RouteTableAssociation": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcrdsSubnet1RouteTableAssociationE01668F2",
@@ -754,7 +754,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/rdsSubnet2/Subnet": [
+        "/ml-base-infra-stack/Vpc/rdsSubnet2/Subnet": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcrdsSubnet2Subnet70A835C8",
@@ -786,7 +786,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/rdsSubnet2/RouteTable": [
+        "/ml-base-infra-stack/Vpc/rdsSubnet2/RouteTable": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcrdsSubnet2RouteTable3E531D9B",
@@ -818,7 +818,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/rdsSubnet2/RouteTableAssociation": [
+        "/ml-base-infra-stack/Vpc/rdsSubnet2/RouteTableAssociation": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcrdsSubnet2RouteTableAssociation25A7BD68",
@@ -850,7 +850,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/IGW": [
+        "/ml-base-infra-stack/Vpc/IGW": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcIGWD7BA715C",
@@ -876,7 +876,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Vpc/VPCGW": [
+        "/ml-base-infra-stack/Vpc/VPCGW": [
           {
             "type": "aws:cdk:logicalId",
             "data": "VpcVPCGWBF912B6E",
@@ -902,7 +902,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/applicationSecurityGroup/Resource": [
+        "/ml-base-infra-stack/applicationSecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "applicationSecurityGroup2A06C04D",
@@ -928,13 +928,13 @@
             ]
           }
         ],
-        "/MLInfraVpc/rdsSecurityGroup/Resource": [
+        "/ml-base-infra-stack/rdsSecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "rdsSecurityGroup7880CD68",
             "trace": [
               "new SecurityGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:370:26)",
-              "new VpcStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/vpc-stack.ts:36:33)",
+              "new VpcStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/vpc-stack.ts:38:33)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:10:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -954,12 +954,12 @@
             ]
           }
         ],
-        "/MLInfraVpc/modeldb-rds-sg": [
+        "/ml-base-infra-stack/modeldb-rds-sg": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbrdssg",
             "trace": [
-              "new VpcStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/vpc-stack.ts:40:9)",
+              "new VpcStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/vpc-stack.ts:44:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:10:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -979,12 +979,12 @@
             ]
           }
         ],
-        "/MLInfraVpc/modeldb-application-sg": [
+        "/ml-base-infra-stack/modeldb-application-sg": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbapplicationsg",
             "trace": [
-              "new VpcStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/vpc-stack.ts:46:9)",
+              "new VpcStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/vpc-stack.ts:50:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:10:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1004,7 +1004,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Exports/Output{\"Ref\":\"Vpc8378EB38\"}": [
+        "/ml-base-infra-stack/Exports/Output{\"Ref\":\"Vpc8378EB38\"}": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefVpc8378EB38272D6E3A",
@@ -1024,7 +1024,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Exports/Output{\"Ref\":\"VpcingressSubnet1Subnet059F22C6\"}": [
+        "/ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcingressSubnet1Subnet059F22C6\"}": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefVpcingressSubnet1Subnet059F22C68B714600",
@@ -1044,7 +1044,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Exports/Output{\"Ref\":\"VpcingressSubnet2SubnetF175D754\"}": [
+        "/ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcingressSubnet2SubnetF175D754\"}": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefVpcingressSubnet2SubnetF175D754472AB14E",
@@ -1064,7 +1064,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Exports/Output{\"Ref\":\"VpcapplicationSubnet1Subnet8B68205B\"}": [
+        "/ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcapplicationSubnet1Subnet8B68205B\"}": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefVpcapplicationSubnet1Subnet8B68205B1F66BB2C",
@@ -1084,7 +1084,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Exports/Output{\"Ref\":\"VpcapplicationSubnet2Subnet29670962\"}": [
+        "/ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcapplicationSubnet2Subnet29670962\"}": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefVpcapplicationSubnet2Subnet296709622ABA6FC7",
@@ -1104,7 +1104,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Exports/Output{\"Ref\":\"VpcrdsSubnet1SubnetC2926CEA\"}": [
+        "/ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcrdsSubnet1SubnetC2926CEA\"}": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefVpcrdsSubnet1SubnetC2926CEA415B78A7",
@@ -1124,7 +1124,7 @@
             ]
           }
         ],
-        "/MLInfraVpc/Exports/Output{\"Ref\":\"VpcrdsSubnet2Subnet70A835C8\"}": [
+        "/ml-base-infra-stack/Exports/Output{\"Ref\":\"VpcrdsSubnet2Subnet70A835C8\"}": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefVpcrdsSubnet2Subnet70A835C80F5EB08B",
@@ -1146,17 +1146,17 @@
         ]
       }
     },
-    "ModelDbRDSStack": {
+    "modeldb-rds-stack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "ModelDbRDSStack.template.json"
+        "templateFile": "modeldb-rds-stack.template.json"
       },
       "dependencies": [
-        "MLInfraVpc"
+        "ml-base-infra-stack"
       ],
       "metadata": {
-        "/ModelDbRDSStack/RDSIngressRule": [
+        "/modeldb-rds-stack/RDSIngressRule": [
           {
             "type": "aws:cdk:logicalId",
             "data": "RDSIngressRule",
@@ -1181,7 +1181,7 @@
             ]
           }
         ],
-        "/ModelDbRDSStack/ModelDBRDSInstance/SubnetGroup": [
+        "/modeldb-rds-stack/ModelDBRDSInstance/SubnetGroup": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ModelDBRDSInstanceSubnetGroup2E015E21",
@@ -1209,7 +1209,7 @@
             ]
           }
         ],
-        "/ModelDbRDSStack/ModelDBRDSInstance/Secret/Resource": [
+        "/modeldb-rds-stack/ModelDBRDSInstance/Secret/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ModelDBRDSInstanceSecret6245FCEA",
@@ -1237,7 +1237,7 @@
             ]
           }
         ],
-        "/ModelDbRDSStack/ModelDBRDSInstance/Secret/Attachment/Resource": [
+        "/modeldb-rds-stack/ModelDBRDSInstance/Secret/Attachment/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ModelDBRDSInstanceSecretAttachmentFC71CF07",
@@ -1265,7 +1265,7 @@
             ]
           }
         ],
-        "/ModelDbRDSStack/ModelDBRDSInstance/Resource": [
+        "/modeldb-rds-stack/ModelDBRDSInstance/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ModelDBRDSInstance5676F2F9",
@@ -1291,7 +1291,7 @@
             ]
           }
         ],
-        "/ModelDbRDSStack/modeldb-rds-url": [
+        "/modeldb-rds-stack/modeldb-rds-url": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbrdsurl",
@@ -1318,24 +1318,24 @@
         ]
       }
     },
-    "ModelDbECSClusterStack": {
+    "modeldb-ecs-cluster-stack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "ModelDbECSClusterStack.template.json"
+        "templateFile": "modeldb-ecs-cluster-stack.template.json"
       },
       "dependencies": [
-        "ModelDbRDSStack",
-        "MLInfraVpc"
+        "modeldb-rds-stack",
+        "ml-base-infra-stack"
       ],
       "metadata": {
-        "/ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:22": [
+        "/modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:22": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ec2SecurityGroupfrom00000226FF1FE8E",
             "trace": [
               "MutableImport.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:112:26)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:130:26)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1355,13 +1355,13 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:8085": [
+        "/modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:8085": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ec2SecurityGroupfrom000008085EE86066C",
             "trace": [
               "MutableImport.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:218:26)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:213:26)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1381,13 +1381,13 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:8086": [
+        "/modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:8086": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ec2SecurityGroupfrom000008086617288CF",
             "trace": [
               "MutableImport.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:219:26)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:214:26)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1407,13 +1407,13 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/ec2-SecurityGroup/from 0.0.0.0_0:80": [
+        "/modeldb-ecs-cluster-stack/ec2-SecurityGroup/from 0.0.0.0_0:80": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ec2SecurityGroupfrom0000080CF1035EC",
             "trace": [
               "MutableImport.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:221:26)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:216:26)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1433,13 +1433,13 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterB1DFD127",
+            "data": "modeldbecscluster855068CD",
             "trace": [
               "new Cluster (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:109:21)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:36:24)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:34:24)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1459,15 +1459,15 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceSecurityGroup3CEA3F4C",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFF284E8D",
             "trace": [
               "new SecurityGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:370:26)",
               "new AutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:422:26)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:173:30)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1487,15 +1487,54 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceSecurityGroup/from modeldbecsclusterstackmodeldbecsserviceLBSecurityGroup928CF400:32768-65535": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceRoleCB1DBF6B",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupfrommodeldbecsclusterstackmodeldbecsserviceLBSecurityGroup928CF40032768655355EC99A38",
+            "trace": [
+              "SecurityGroup.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
+              "SecurityGroup.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:387:13)",
+              "/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:154:23",
+              "ReactiveList.forEachAndForever (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:153:45",
+              "ReactiveList.forEachAndForever (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowFrom (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:152:26)",
+              "ApplicationListener.registerConnectable (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.ts:330:29)",
+              "ApplicationTargetGroup.registerConnectable (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.ts:146:16)",
+              "Object.attachToApplicationTargetGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.ts:420:21)",
+              "Ec2Service.attachToApplicationTargetGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.ts:385:43)",
+              "ApplicationTargetGroup.addTarget (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.ts:120:29)",
+              "ApplicationLoadBalancedEc2Service.addServiceAsTarget (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:385:22)",
+              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:135:10)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
+              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
+              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupInstanceRoleF55C5BA3",
             "trace": [
               "new Role (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/role.ts:309:18)",
               "new AutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:430:31)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:173:30)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1515,17 +1554,17 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/DefaultPolicy/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy86D959DB",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy56A44B28",
             "trace": [
               "new Policy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/policy.ts:114:22)",
               "Role.addToPolicy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/role.ts:350:28)",
               "AutoScalingGroup.addToRolePolicy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:594:15)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:215:22)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1545,14 +1584,14 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/InstanceProfile": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/InstanceProfile": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupInstanceProfile7539F89A",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupInstanceProfile7949990E",
             "trace": [
               "new AutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:437:24)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:173:30)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1572,14 +1611,14 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LaunchConfig": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LaunchConfig": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLaunchConfigACF2147C",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupLaunchConfigF4E6055D",
             "trace": [
               "new AutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:447:26)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:173:30)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1599,14 +1638,14 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/ASG": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/ASG": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupASG82CCB875",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupASG6849224B",
             "trace": [
               "new AutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:523:29)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:173:30)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1626,17 +1665,17 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole14F4070E",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleB9FE9393",
             "trace": [
               "new Role (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/role.ts:309:18)",
               "new Function (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-lambda/lib/function.ts:445:31)",
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:52:16)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1656,10 +1695,10 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/DefaultPolicy/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicyF2B9A895",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicyA17A9D92",
             "trace": [
               "new Policy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/policy.ts:114:22)",
               "Role.addToPolicy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/role.ts:350:28)",
@@ -1667,7 +1706,7 @@
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:74:8)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1687,16 +1726,16 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunction52229B7A",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionEB31DDC3",
             "trace": [
               "new Function (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-lambda/lib/function.ts:460:35)",
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:52:16)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1716,10 +1755,10 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/AllowInvoke:ModelDbECSClusterStackawsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicD294E6AA": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/AllowInvoke:modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicEC4AF99A": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunctionAllowInvokeModelDbECSClusterStackawsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicD294E6AAADEFE007",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionAllowInvokemodeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicEC4AF99AF7FF55B4",
             "trace": [
               "Function.addPermission (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:203:5)",
               "LambdaSubscription.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-sns-subscriptions/lib/lambda.ts:27:13)",
@@ -1730,7 +1769,7 @@
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:65:28)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1750,10 +1789,10 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Topic/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/DrainECSHook/Function/Topic/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupDrainECSHookFunctionTopicA2CF08AA",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupDrainECSHookFunctionTopic6B5DDF34",
             "trace": [
               "new Subscription (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-sns/lib/subscription.ts:89:5)",
               "Topic.addSubscription (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-sns/lib/topic-base.ts:73:5)",
@@ -1763,7 +1802,7 @@
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:65:28)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1783,10 +1822,10 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleE03641B3",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRole6FFDCEA1",
             "trace": [
               "new Role (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/role.ts:309:18)",
               "new LifecycleHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/lifecycle-hook.ts:99:31)",
@@ -1794,7 +1833,7 @@
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:65:28)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1814,10 +1853,10 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/DefaultPolicy/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Role/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy34519B50",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy34BC9AD6",
             "trace": [
               "new Policy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/policy.ts:114:22)",
               "Role.addToPolicy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/role.ts:350:28)",
@@ -1831,7 +1870,7 @@
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:65:28)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1851,10 +1890,10 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Topic/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Topic/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic8CD6BECA",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicB1E0F16E",
             "trace": [
               "new Topic (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-sns/lib/topic.ts:61:22)",
               "FunctionHook.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling-hooktargets/lib/lambda-hook.ts:18:19)",
@@ -1863,7 +1902,7 @@
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:65:28)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1883,17 +1922,17 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/awsvpc-verta-ai-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-cluster/DefaultAutoScalingGroup/LifecycleHookDrainHook/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "awsvpcvertaaiecsclusterDefaultAutoScalingGroupLifecycleHookDrainHook9D26783C",
+            "data": "modeldbecsclusterDefaultAutoScalingGroupLifecycleHookDrainHookC2BA6926",
             "trace": [
               "new LifecycleHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/lifecycle-hook.ts:105:22)",
               "AutoScalingGroup.addLifecycleHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:245:12)",
               "new InstanceDrainHook (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/drain-hook/instance-drain-hook.ts:65:28)",
               "Cluster.addAutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:233:7)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:181:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1913,7 +1952,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+        "/modeldb-ecs-cluster-stack/SsmParameterValue:--aws--service--ecs--optimized-ami--amazon-linux-2--recommended--image_id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
           {
             "type": "aws:cdk:logicalId",
             "data": "SsmParameterValueawsserviceecsoptimizedamiamazonlinux2recommendedimageidC96584B6F00A464EAD1953AFF4B05118Parameter",
@@ -1923,7 +1962,7 @@
               "EcsOptimizedAmi.getImage (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:380:37)",
               "new AutoScalingGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.ts:442:44)",
               "Cluster.addCapacity (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/cluster.ts:173:30)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:45:40)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:46:40)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1943,7 +1982,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-awspvc/TaskRole/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-awspvc/TaskRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbawspvcTaskRole2FCECB88",
@@ -1951,7 +1990,7 @@
               "new Role (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/role.ts:309:18)",
               "new TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:276:39)",
               "new Ec2TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/ec2/ec2-task-definition.ts:59:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:115:31)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:133:31)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1971,14 +2010,14 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-awspvc/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-awspvc/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbawspvc2B97D0AF",
             "trace": [
               "new TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:280:21)",
               "new Ec2TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/ec2/ec2-task-definition.ts:59:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:115:31)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:133:31)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -1998,16 +2037,16 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-awspvc/modeldb-frontend/LogGroup/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-backend/LogGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "modeldbawspvcmodeldbfrontendLogGroup93626B92",
+            "data": "modeldbawspvcmodeldbbackendLogGroup31773F15",
             "trace": [
               "new LogGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-logs/lib/log-group.ts:359:22)",
               "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:91:44)",
               "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
               "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:137:53)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:156:52)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2027,7 +2066,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-awspvc/ExecutionRole/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-awspvc/ExecutionRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbawspvcExecutionRole40819C4D",
@@ -2037,7 +2076,7 @@
               "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:95:65)",
               "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
               "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:137:53)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:156:52)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2057,7 +2096,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-awspvc/ExecutionRole/DefaultPolicy/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-awspvc/ExecutionRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbawspvcExecutionRoleDefaultPolicy2BEAD7E4",
@@ -2070,7 +2109,7 @@
               "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:95:19)",
               "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
               "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:137:53)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:156:52)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2090,36 +2129,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-awspvc/modeldb-backend/LogGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "modeldbawspvcmodeldbbackendLogGroup31773F15",
-            "trace": [
-              "new LogGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-logs/lib/log-group.ts:359:22)",
-              "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:91:44)",
-              "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
-              "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:153:52)",
-              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
-              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
-              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          }
-        ],
-        "/ModelDbECSClusterStack/modeldb-awspvc/modeldb-proxy/LogGroup/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-awspvc/modeldb-proxy/LogGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbawspvcmodeldbproxyLogGroup7AB2F2BB",
@@ -2128,7 +2138,7 @@
               "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:91:44)",
               "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
               "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:177:50)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:193:50)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2148,7 +2158,34 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/LB/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-backend-service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modeldbbackendserviceService48B41676",
+            "trace": [
+              "new BaseService (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.ts:338:21)",
+              "new Ec2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/ec2/ec2-service.ts:172:5)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:219:27)",
+              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
+              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbecsserviceLB23861F49",
@@ -2157,7 +2194,7 @@
               "new ApplicationLoadBalancer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.ts:62:5)",
               "new ApplicationLoadBalancedServiceBase (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:311:27)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:85:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2177,7 +2214,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/LB/SecurityGroup/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/SecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbecsserviceLBSecurityGroup4AB093DA",
@@ -2186,7 +2223,7 @@
               "new ApplicationLoadBalancer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.ts:68:49)",
               "new ApplicationLoadBalancedServiceBase (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:311:27)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:85:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2206,10 +2243,10 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/LB/SecurityGroup/to ModelDbECSClusterStackmodeldbecsserviceServiceSecurityGroup7DA545DC:80": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/SecurityGroup/to modeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFA53A763:32768-65535": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "modeldbecsserviceLBSecurityGrouptoModelDbECSClusterStackmodeldbecsserviceServiceSecurityGroup7DA545DC80151B1EE3",
+            "data": "modeldbecsserviceLBSecurityGrouptomodeldbecsclusterstackmodeldbecsclusterDefaultAutoScalingGroupInstanceSecurityGroupFA53A76332768655359807381A",
             "trace": [
               "SecurityGroup.addEgressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:103:7)",
               "SecurityGroup.addEgressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:416:13)",
@@ -2226,7 +2263,7 @@
               "ApplicationTargetGroup.addTarget (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.ts:120:29)",
               "ApplicationLoadBalancedEc2Service.addServiceAsTarget (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:385:22)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:135:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2246,7 +2283,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/LB/PublicListener/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/PublicListener/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbecsserviceLBPublicListenerE0911699",
@@ -2256,7 +2293,7 @@
               "ApplicationLoadBalancer.addListener (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.ts:83:12)",
               "new ApplicationLoadBalancedServiceBase (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:323:34)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:85:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2276,7 +2313,7 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/LB/PublicListener/ECSGroup/Resource": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/LB/PublicListener/ECSGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbecsserviceLBPublicListenerECSGroup0CDFD2A5",
@@ -2286,7 +2323,7 @@
               "ApplicationListener.addTargets (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.ts:241:19)",
               "new ApplicationLoadBalancedServiceBase (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:328:38)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:85:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2306,14 +2343,14 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/LoadBalancerDNS": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/LoadBalancerDNS": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbecsserviceLoadBalancerDNSB5A297E4",
             "trace": [
               "new ApplicationLoadBalancedServiceBase (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:367:5)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:85:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2333,14 +2370,14 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/ServiceURL": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/ServiceURL": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbecsserviceServiceURL9BAAF76C",
             "trace": [
               "new ApplicationLoadBalancedServiceBase (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:368:5)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:85:5)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
@@ -2360,7 +2397,159 @@
             ]
           }
         ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/Service/Service": [
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modeldbecsserviceTaskDefTaskRoleB859DC18",
+            "trace": [
+              "new Role (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-iam/lib/role.ts:309:18)",
+              "new TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:276:39)",
+              "new Ec2TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/ec2/ec2-task-definition.ts:59:5)",
+              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:93:29)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
+              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
+              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modeldbecsserviceTaskDef77AC47AB",
+            "trace": [
+              "new TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:280:21)",
+              "new Ec2TaskDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/ec2/ec2-task-definition.ts:59:5)",
+              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:93:29)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
+              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
+              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/modeldb-frontend/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modeldbecsserviceTaskDefmodeldbfrontendLogGroup1A9A16F2",
+            "trace": [
+              "new LogGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-logs/lib/log-group.ts:359:22)",
+              "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:91:44)",
+              "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
+              "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
+              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:106:45)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
+              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
+              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modeldbecsserviceTaskDefExecutionRoleEE2BA254",
+            "trace": [
+              "new Role (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-iam/lib/role.ts:309:18)",
+              "Ec2TaskDefinition.obtainExecutionRole (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:424:29)",
+              "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:95:65)",
+              "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
+              "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
+              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:106:45)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
+              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
+              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modeldbecsserviceTaskDefExecutionRoleDefaultPolicy2062D11E",
+            "trace": [
+              "new Policy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-iam/lib/policy.ts:114:22)",
+              "Role.addToPolicy (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-iam/lib/role.ts:350:28)",
+              "Function.addToPrincipal (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-iam/lib/grant.ts:147:61)",
+              "LogGroup.grant (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-logs/lib/log-group.ts:164:22)",
+              "LogGroup.grantWrite (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-logs/lib/log-group.ts:157:17)",
+              "AwsLogDriver.bind (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.ts:95:19)",
+              "new ContainerDefinition (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/container-definition.ts:363:44)",
+              "Ec2TaskDefinition.addContainer (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.ts:366:12)",
+              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:106:45)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
+              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
+              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
+              "Module.load (internal/modules/cjs/loader.js:996:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/modeldb-ecs-cluster-stack/modeldb-ecs-service/Service/Service": [
           {
             "type": "aws:cdk:logicalId",
             "data": "modeldbecsserviceService0093DE5D",
@@ -2368,75 +2557,7 @@
               "new BaseService (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.ts:338:21)",
               "new Ec2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/ec2/ec2-service.ts:172:5)",
               "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:122:20)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
-              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
-              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
-              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          }
-        ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/Service/SecurityGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "modeldbecsserviceServiceSecurityGroup433449ED",
-            "trace": [
-              "new SecurityGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:370:26)",
-              "Ec2Service.configureAwsVpcNetworking (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.ts:591:23)",
-              "new Ec2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/ec2/ec2-service.ts:195:12)",
-              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:122:20)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
-              "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
-              "Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:817:12)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "main (/usr/local/lib/node_modules/ts-node/src/bin.ts:226:14)",
-              "Object.<anonymous> (/usr/local/lib/node_modules/ts-node/src/bin.ts:485:3)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          }
-        ],
-        "/ModelDbECSClusterStack/modeldb-ecs-service/Service/SecurityGroup/from ModelDbECSClusterStackmodeldbecsserviceLBSecurityGroup86B1BD69:80": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "modeldbecsserviceServiceSecurityGroupfromModelDbECSClusterStackmodeldbecsserviceLBSecurityGroup86B1BD6980F66995B5",
-            "trace": [
-              "SecurityGroup.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
-              "SecurityGroup.addIngressRule (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:387:13)",
-              "/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:154:23",
-              "ReactiveList.forEachAndForever (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
-              "/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:153:45",
-              "ReactiveList.forEachAndForever (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
-              "Connections.allowFrom (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:152:26)",
-              "ApplicationListener.registerConnectable (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.ts:330:29)",
-              "ApplicationTargetGroup.registerConnectable (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.ts:146:16)",
-              "Object.attachToApplicationTargetGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.ts:420:21)",
-              "Ec2Service.attachToApplicationTargetGroup (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.ts:385:43)",
-              "ApplicationTargetGroup.addTarget (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.ts:120:29)",
-              "ApplicationLoadBalancedEc2Service.addServiceAsTarget (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/base/application-load-balanced-service-base.ts:385:22)",
-              "new ApplicationLoadBalancedEc2Service (/Users/olalekanelesin/workspace/verta-ai-aws/stack/node_modules/@aws-cdk/aws-ecs-patterns/lib/ecs/application-load-balanced-ecs-service.ts:135:10)",
-              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:223:28)",
+              "new ECSStack (/Users/olalekanelesin/workspace/verta-ai-aws/stack/lib/ecs-stack.ts:226:9)",
               "Object.<anonymous> (/Users/olalekanelesin/workspace/verta-ai-aws/stack/index.ts:18:18)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:814:23)",
