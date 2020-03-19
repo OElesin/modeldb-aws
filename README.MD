@@ -15,6 +15,11 @@ The vision for this project is to develop AI Platform capabilities integrated wi
 In addition, we are working on full integration with Amazon SageMaker Experiments API and/or training logs so as to provide a unified experience in machine learning workflow. We do not have a defined roadmap yet, but we hope the project matures as it simplifies machine learning workflows.
 
 
+Architecture
+---
+![Verta AI ModelDB AWS Deployment Architecture](./img/modeldb-aws-deployment-architecture.png)
+
+
 Deployment
 ---
 This project is deployed via [Amazon Cloudformation](https://aws.amazon.com/cloudformation/) using the [AWS Cloud Development Kit](https://aws.amazon.com/cdk). Follow the steps below to deploy the stack in your AWS Account.
@@ -33,3 +38,18 @@ The stack creates the following AWS resources:
 
 
 After a successful deployment, you should be able to access ModelDB frontend UI.
+
+![Verta AI ModelDB UI](./img/modeldb-frontend-ui.png)
+
+
+Amazon SageMaker Integration
+---
+As shown in the architecture diagram above, we have integrated [ModelDB](https://github.com/VertaAI/modeldb) with Amazon SageMaker. 
+For easier deployment, all Amazon SageMaker infrastructure such as SageMaker Notebooks, Model Training jobs, SageMaker Processing jobs, are launched in the same
+[Amazon Virtual Private Cloud](https://aws.amazon.com/vpc). For more complicated deployments as having the infrastructure in separate VPCs, you may consider [VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html), this however is not covered here.
+
+
+#### Amazon SageMaker examples with ModelDB (Coming soon)
+1. Data Versioning
+2. Logging and Querying a Model Metadata
+3. So much more ...
