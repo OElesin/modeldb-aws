@@ -1,6 +1,7 @@
 import { App, Duration, Stack, StackProps, CfnOutput, Fn, } from "@aws-cdk/core";
 import { DatabaseInstance, DatabaseInstanceEngine, StorageType, } from '@aws-cdk/aws-rds';
 import { InstanceClass, InstanceSize, InstanceType, SubnetType, Vpc, SecurityGroup, CfnSecurityGroupIngress, } from "@aws-cdk/aws-ec2";
+import {Secret} from '@aws-cdk/aws-secretsmanager';
 
 export interface RDSStackProps extends StackProps {
     vpc: Vpc,
@@ -26,7 +27,14 @@ export class RDSStack extends Stack {
             toPort: props.port,
             sourceSecurityGroupId: applicationSGId,
             groupId: rdsSGId
-        })
+        });
+        const accountId = Stack.of(this).account
+        const region = Stack.of(this).region
+
+        const dbPasswordSecret = Secret.fromSecretAttributes(this, 'modeldb-rds-credentials', {
+            secretArn: `arn:aws:secretsmanager:${region}:${accountId}:secret:modeldb-rds-password-SnYFyD`
+        });
+        
         this.postgresRDSInstance = new DatabaseInstance(this, 'ModelDBRDSInstance', {
             engine: DatabaseInstanceEngine.POSTGRES,
             instanceClass: InstanceType.of(InstanceClass.T2, InstanceSize.SMALL),
@@ -42,7 +50,7 @@ export class RDSStack extends Stack {
             masterUsername: props.username,
             databaseName: props.databaseName,
             securityGroups: [rdsSecurityGroup],
-            // masterUserPassword: this.secret.secretValue,
+            masterUserPassword: dbPasswordSecret.secretValue,
             // generateMasterUserPassword: true,
             port: props.port
         });

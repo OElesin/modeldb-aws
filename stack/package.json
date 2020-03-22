@@ -23,6 +23,7 @@
     "@aws-cdk/aws-ecs": "^1.28.0",
     "@aws-cdk/aws-ecs-patterns": "*",
     "@aws-cdk/aws-elasticloadbalancingv2": "^1.28.0",
+    "@aws-cdk/aws-servicediscovery": "^1.28.0",
     "@aws-cdk/aws-rds": "^1.28.0",
     "@aws-cdk/core": "^1.28.0",
     "aws-sdk": "^2.641.0",

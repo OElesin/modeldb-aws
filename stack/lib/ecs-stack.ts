@@ -1,8 +1,9 @@
-import { Stack, StackProps, Fn, App } from "@aws-cdk/core";
+import { Stack, StackProps, Fn, App, Duration } from "@aws-cdk/core";
 import { AutoScalingGroup } from '@aws-cdk/aws-autoscaling'
 import { SubnetType, Vpc, SubnetSelection, InstanceType, InstanceClass, InstanceSize, SecurityGroup, Peer, Port } from "@aws-cdk/aws-ec2";
 import { AwsLogDriver, Ec2TaskDefinition, NetworkMode, ContainerImage, Cluster, Ec2Service, Protocol} from '@aws-cdk/aws-ecs';
 import {ApplicationLoadBalancedEc2Service} from '@aws-cdk/aws-ecs-patterns';
+import {PrivateDnsNamespace, DnsRecordType} from '@aws-cdk/aws-servicediscovery';
 import * as AWS from 'aws-sdk';
 import { ConfigOptions } from './config';
 
@@ -15,22 +16,36 @@ export interface ECSStackProps extends StackProps {
 export class ECSStack extends Stack {
 
     readonly cluster: Cluster;
-    readonly ec2Service: Ec2Service;
+    readonly backEndService: Ec2Service;
+    readonly proxyEndService: Ec2Service;
     readonly publicSubnets: SubnetSelection;
     readonly clusterASG: AutoScalingGroup;
     readonly instanceUserData: string;
     readonly ecsClusterSecurityGroup: SecurityGroup;
     readonly containerSecurityGroup: SecurityGroup;
-    readonly taskDefinition: Ec2TaskDefinition;
+    readonly modelDBBackendtaskDefinition: Ec2TaskDefinition;
+    readonly modelDBProxytaskDefinition: Ec2TaskDefinition;
+    readonly modelDBFrontendtaskDefinition: Ec2TaskDefinition;
     readonly logDriver: AwsLogDriver;
+    readonly cloudMapNamespace: PrivateDnsNamespace;
     
 
     constructor(scope: App, id: string, props: ECSStackProps) {
         super(scope, id, props);
         
+        const serviceDiscoveryName = 'modeldb-cluster-aws.com';
+        const modeldbBackendDiscoveryName = 'backend';
+        const modeldbBackendDiscoveryDns = 'localhost';//`${modeldbBackendDiscoveryName}.${serviceDiscoveryName}`;
+        const modeldbProxyDiscoveryDns = 'localhost';// `proxy.${serviceDiscoveryName}`
         const applicationSGId = Fn.importValue('modeldb-application-sg');
         const appSecurityGroup = SecurityGroup.fromSecurityGroupId(this, 'ec2-SecurityGroup', applicationSGId);
         
+        // CloudMap Namespace
+        this.cloudMapNamespace = new PrivateDnsNamespace(this, 'modeldb-namespace', {
+            vpc: props.vpc,
+            name: serviceDiscoveryName
+        });
+
         this.cluster = new Cluster(this, 'modeldb-ecs-cluster', { 
             vpc: props.vpc,
             clusterName: 'modeldb-ecs-cluster'
@@ -44,9 +59,8 @@ export class ECSStack extends Stack {
         });
 
         this.clusterASG = this.cluster.addCapacity('DefaultAutoScalingGroup', {
-            instanceType: InstanceType.of(InstanceClass.M4, InstanceSize.LARGE),
+            instanceType: InstanceType.of(InstanceClass.M4, InstanceSize.XLARGE),
             keyName: 'datafy-keypair',
-            associatePublicIpAddress: true,
             vpcSubnets: this.publicSubnets,
         });
         const dbUrl = Fn.importValue('modeldb-rds-url');
@@ -125,16 +139,15 @@ telemetry:
                 _self.clusterASG.addUserData(userData); 
             }
         });
-        // this.clusterASG.addUserData(this.instanceUserData);
 
         appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22))
         this.clusterASG.addSecurityGroup(appSecurityGroup);
 
-        this.taskDefinition = new Ec2TaskDefinition(this, 'modeldb-awspvc', {
+        this.modelDBBackendtaskDefinition = new Ec2TaskDefinition(this, 'modeldb-awspvc', {
             networkMode: NetworkMode.AWS_VPC,
         });
         
-        this.taskDefinition.addVolume(
+        this.modelDBBackendtaskDefinition.addVolume(
             {
                 name: 'artifact-store',
                 host: {
@@ -143,7 +156,7 @@ telemetry:
             }
         )
         
-        this.taskDefinition.addVolume(
+        this.modelDBBackendtaskDefinition.addVolume(
             {
                 name: 'config',
                 host: {
@@ -153,7 +166,7 @@ telemetry:
         );
         
         // define containers below
-        const modeldbBackend = this.taskDefinition.addContainer('modeldb-backend', {
+        const modeldbBackend = this.modelDBBackendtaskDefinition.addContainer('modeldb-backend', {
             image: ContainerImage.fromRegistry(config.vertaAIImages.ModelDBBackEnd),
             cpu: 100,
             memoryLimitMiB: 256,
@@ -166,13 +179,11 @@ telemetry:
         
         modeldbBackend.addPortMappings(
             {
-                containerPort: 8085,
-                hostPort: 8085,
+                containerPort: 8086,
                 protocol: Protocol.TCP,
             },
             {
-                containerPort: 8086,
-                hostPort: 8086,
+                containerPort: 8085,
                 protocol: Protocol.TCP, 
             }
         );
@@ -190,13 +201,27 @@ telemetry:
             }
         );
 
-        const modeldbProxy = this.taskDefinition.addContainer('modeldb-proxy', {
+        // Create the backend service
+        this.backEndService = new Ec2Service(this, 'modeldb-backend-service', {
+            cluster: this.cluster,
+            taskDefinition: this.modelDBBackendtaskDefinition,
+            serviceName: 'modeldb-backend-service',
+            assignPublicIp: false,
+            securityGroup: appSecurityGroup,
+            vpcSubnets: this.publicSubnets,
+        });
+
+        this.modelDBProxytaskDefinition = new Ec2TaskDefinition(this, 'modeldb-proxy-task', {
+            networkMode: NetworkMode.AWS_VPC,
+        });
+
+        const modeldbProxy = this.modelDBProxytaskDefinition.addContainer('modeldb-proxy', {
             image: ContainerImage.fromRegistry(config.vertaAIImages.ModelDBProxy),
             cpu: 100,
             memoryLimitMiB: 256,
             essential: true,    
             environment: {
-                MDB_ADDRESS: "modeldb-backend:8085",
+                MDB_ADDRESS: `${modeldbBackendDiscoveryDns}:8086`,
                 SERVER_HTTP_PORT: "8080"
             },
             logging: this.logDriver
@@ -205,44 +230,75 @@ telemetry:
         modeldbProxy.addPortMappings(
             {
                 containerPort: 8080,
-                hostPort: 8080,
                 protocol: Protocol.TCP,
             }
         );
 
+        // create proxy service
+        this.proxyEndService = new Ec2Service(this, 'modeldb-proxy-service', {
+            cluster: this.cluster,
+            taskDefinition: this.modelDBProxytaskDefinition,
+            serviceName: 'modeldb-proxy-service',
+            assignPublicIp: false,
+            securityGroup: appSecurityGroup,
+            vpcSubnets: this.publicSubnets,
+        });
+
         appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(8085));
         appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(8086));
         appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(22));
-        appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(80));
-
-        // Create the backend service
-        this.ec2Service = new Ec2Service(this, 'modeldb-backend-service', {
-            cluster: this.cluster,
-            taskDefinition: this.taskDefinition,
-            securityGroup: appSecurityGroup,
-            serviceName: 'modeldb-backend-service',
+        appSecurityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(8080));
+        
+        this.modelDBFrontendtaskDefinition = new Ec2TaskDefinition(this, 'modeldb-frontend-task', {
+            networkMode: NetworkMode.AWS_VPC,
         });
+
+        const frontEnd = this.modelDBFrontendtaskDefinition.addContainer('modeldb-frontend', {
+            image: ContainerImage.fromRegistry(config.vertaAIImages.ModelDBFrontend),
+            cpu: 100,
+            memoryLimitMiB: 256,
+            essential: true, 
+            logging: this.logDriver,
+            environment: {
+                DEPLOYED: "yes",
+                BACKEND_API_PROTOCOL: "http",
+                BACKEND_API_DOMAIN: `${modeldbProxyDiscoveryDns}:8080`,
+                MDB_ADDRESS: `http://${modeldbProxyDiscoveryDns}:8080`,
+                ARTIFACTORY_ADDRESS: `http://${modeldbBackendDiscoveryDns}:8086`
+            },
+        });
+
+        frontEnd.addPortMappings(
+            {
+                containerPort: 3000,
+                protocol: Protocol.TCP,
+            }
+        );
 
         new ApplicationLoadBalancedEc2Service(this, 'modeldb-ecs-service', {
             cluster: this.cluster,
             listenerPort: 80,
             cpu: 100,
+            taskDefinition: this.modelDBFrontendtaskDefinition,
             publicLoadBalancer: true,
             memoryLimitMiB: 256,
             serviceName: 'modeldb-frontend-service',
-            taskImageOptions: {
-                image: ContainerImage.fromRegistry(config.vertaAIImages.ModelDBFrontend),
-                containerPort: 3000,
-                containerName: 'modeldb-frontend',
-                environment: {
-                    DEPLOYED: "yes",
-                    BACKEND_API_PROTOCOL: "http",
-                    BACKEND_API_DOMAIN: "modeldb-proxy:8080",
-                    MDB_ADDRESS: "http://modeldb-proxy:8080",
-                    ARTIFACTORY_ADDRESS: "http://modeldb-backend:8086"
-                },
-                logDriver: this.logDriver,
-            }
+        });
+
+        this.backEndService.enableCloudMap({
+            dnsRecordType: DnsRecordType.A,
+            failureThreshold: 1,
+            cloudMapNamespace: this.cloudMapNamespace,
+            name: modeldbBackendDiscoveryName,
+            dnsTtl: Duration.minutes(5)
+        });
+
+        this.proxyEndService.enableCloudMap({
+            dnsRecordType: DnsRecordType.A,
+            failureThreshold: 1,
+            cloudMapNamespace: this.cloudMapNamespace,
+            name: 'proxy',
+            dnsTtl: Duration.minutes(5)
         });
         
     }
